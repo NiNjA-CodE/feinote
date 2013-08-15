@@ -19,8 +19,9 @@
 * analysing the new bash_profile to master the inner process
 
 ###summary
-1.install.sh:replace origin bashprofile;make symlink to available plugins;prompt for user options
-2.bash\_profile:export envornment variables;execute bash\_it.sh
-3.~/.bash\_it/bash\_it.sh;source lib/\*.bash custom/\*.bash etc. and load option bash file in `enabled` directory
+1. install.sh:replace origin bashprofile;make symlink to available plugins;prompt for user options
+2. bash\_profile:export envornment variables;execute bash\_it.sh
+3. ~/.bash\_it/bash\_it.sh;source lib/\*.bash custom/\*.bash etc. and load option bash file in `enabled` directory
+
 **NOTE:** `/lib/\*.bash` provide a army of shell script functions used in other shell file, so souce those lib scripts in the wake of sourcing that shell files
 
