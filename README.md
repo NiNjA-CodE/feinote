@@ -2,13 +2,10 @@
 
 ##install of the bash-it
 
-```
-* you can find the github page [here][contribute]
-	[contribute]: https://github.com/revans/bash-it
+* you can find the github page [clickhere](https://github.com/revans/bash-it)
 * clone the source code *git clone http://github.com/revans/bash-it.git ~/.bash_it*
 * *./install.sh*
 * make options following prompt
-```
 
 ##the process of the install script
 
@@ -24,5 +21,5 @@
 2. bash\_profile:export envornment variables;execute bash\_it.sh
 3. ~/.bash\_it/bash\_it.sh;source lib/\*.bash custom/\*.bash etc. and load option bash file in `enabled` directory
 
-**NOTE:** `/lib/\*.bash` provide a army of shell script functions used in other shell file, so souce those lib scripts in the wake of sourcing that shell files
+	**NOTE:** `/lib/*.bash` provide a army of shell script functions used in other shell file, so souce those lib scripts in the wake of sourcing that shell files
 
