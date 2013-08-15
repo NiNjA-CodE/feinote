@@ -9,7 +9,7 @@
 
 ##the process of the install script
 
-* all those process can be understood by analyse 'install.sh'
+* all those process can be understood by analysing 'install.sh'
 * first step: backup the origin ` bash_profile` to`~/.bash_profile.bak`
 * copy `/bash_it/template/bash_profile.template.bash` to replace the origin `~/.bash_profile`
 * prompt with options to user
@@ -20,6 +20,6 @@
 1. install.sh:replace origin bashprofile;make symlink to available plugins;prompt for user options
 2. bash\_profile:export envornment variables;execute bash\_it.sh
 3. ~/.bash\_it/bash\_it.sh;source lib/\*.bash custom/\*.bash etc. and load option bash file in `enabled` directory
-
+```
 	**NOTE:** `/lib/*.bash` provide a army of shell script functions used in other shell file, so souce those scripts in the wake of sourcing that lib shell files
-
+```
