@@ -1,10 +1,9 @@
 #git配置文件
 
-============
-
 ##三级git配置文件
 
 按照优先级从低到高配置文件分为一下三级
+
 * `etc/gitconfig`(system-level configuration)
 * `~/.gitconfig`(user-level configuration)
 * `WORKSHOP/.git/config`(repo-level configuration)
@@ -17,6 +16,7 @@
 git config命令详细介绍可以看帮助手册，使用命令`git congit --help`
 
 ###编辑三级配置文件
+
 用git config -e选项来打开编辑配置文件
 * `git config -e --system`打开`etc/gitconfig`
 * `git config -e --global`打开`~/.gitconfig`
@@ -26,7 +26,9 @@ git config命令详细介绍可以看帮助手册，使用命令`git congit --he
 打开repo的配置文件用上面的命令，应该在本repo的文件夹中，否则系统也不知道你要打开哪个repo
 
 ###git配置文件格式
+
 git配置文件采用的是INI文件格式；例如`~/.gitconfig`如下：
+
 >
 [alias]
 	ci = commit
@@ -43,6 +45,7 @@ INI文件[]叫做节，每一节中包含各种属性，使用`#`或者`；`引�
 2.用git config 命令配置
 
 用git config 配置方法如下：
+
 ```
 git config --system A.b hello
 	将system-level INI配置文件中的A节的属性b设置为hello
