@@ -38,8 +38,9 @@ INI文件[]叫做节，每一节中包含各种属性，使用`#`或者`；`引�
 git config --system A.b hello
 	将system-level INI配置文件中的A节的属性b设置为hello
 git config --global alias.ci commit
-	将~/。gitconfig文件中的[alias]节下的ci属性设置为commit(设置快捷键)
-git config alias.st status
+	将~/.gitconfig文件中的[alias]节下的ci属性设置为commit(设置快捷键)
+git config fei.lun zhou
+	将WORKSHOP/.git/config文件中[fei]中属性lun设置为zhou
 ```
 
 
