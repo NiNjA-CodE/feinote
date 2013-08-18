@@ -1,0 +1,128 @@
+.git
+├── branches
+├── COMMIT_EDITMSG
+├── config
+├── description
+├── FETCH_HEAD
+├── HEAD
+├── hooks
+│   ├── applypatch-msg.sample
+│   ├── commit-msg.sample
+│   ├── post-update.sample
+│   ├── pre-applypatch.sample
+│   ├── pre-commit.sample
+│   ├── prepare-commit-msg.sample
+│   ├── pre-rebase.sample
+│   └── update.sample
+├── index
+├── info
+│   └── exclude
+├── logs
+│   ├── HEAD
+│   └── refs
+│       ├── heads
+│       │   └── master
+│       └── remotes
+│           └── origin
+│               └── master
+├── objects
+│   ├── 00
+│   │   └── 36dce5fde73172da59b4fe925cdec4dffcdb87
+│   ├── 06
+│   │   └── 11672bf2bda2f95890f0286994add19f264f08
+│   ├── 11
+│   │   └── 29973e93a47a5f0e7a1e83429df35890360d55
+│   ├── 2c
+│   │   └── ad514d88faff6a36f4a9f1d7698dfc8adc1de6
+│   ├── 2d
+│   │   ├── dd05344515319efaffe5f290b3c1c8aa08b7cf
+│   │   └── dd66bb810a9a486defce633c5a92a53d5694e4
+│   ├── 3b
+│   │   └── 1985cd4533c7525e9a8b95cb934900c0381965
+│   ├── 3d
+│   │   └── fd2cf99974a98b2d8dbb6c8b193c24cace47e3
+│   ├── 44
+│   │   └── 3294f125b231f2e41c077504fcf257fabddf32
+│   ├── 47
+│   │   └── 8d274de7580e34c702c591753141577201cb2c
+│   ├── 50
+│   │   └── a41d0a0974b633f18c0df249bd15db6e0ddefc
+│   ├── 5e
+│   │   └── d101cf17bdbcd860180a6d0ce20605c50e5508
+│   ├── 5f
+│   │   └── ec5d84bcb12f92e8148e7351fe18449f0f4faa
+│   ├── 60
+│   │   └── acb9756ca44bf6d269fde8267901460cd27005
+│   ├── 64
+│   │   └── 73850f2b839be12a7a8e41c92e9dec582178af
+│   ├── 67
+│   │   └── 8257dea44632f46e898e99dd840b360d12cf0d
+│   ├── 6e
+│   │   └── a834341bd644f9ca659d381898d9f797cddc22
+│   ├── 75
+│   │   └── 3c6979ff98b1e0980667f9e1615010a9064a1c
+│   ├── 76
+│   │   └── 3c0cebece40075cf7bb22df9f4ec13a2ac0123
+│   ├── 77
+│   │   ├── 1db3014cf6f8f44907a795ec4d42626ccbea7b
+│   │   └── c2fe3754401ad47e46d867d919fd455c239d05
+│   ├── 79
+│   │   └── 3430bc0cd37d40ca3f6f312e26b24af7e7188e
+│   ├── 8a
+│   │   └── 987d90e1d74886414a5e88939cfd58dafa3ea3
+│   ├── 8c
+│   │   └── 80c380c8ddaa3727ee961cddcc52b09ce3aa52
+│   ├── 8d
+│   │   └── f6bae5710d37e27cd92af43707bcab14999b15
+│   ├── 8e
+│   │   ├── 8a268bc0c172fb0696492fc6300d37af37662c
+│   │   └── 98da62523e209150a3bfdb215a0c79373d642a
+│   ├── 9a
+│   │   └── 0e574af1f3fed0c4d7aba79ffe6f878dc92b00
+│   ├── 9f
+│   │   └── 47ad8f18b74b006e4c5d5ff37894f9a4ef22d4
+│   ├── ad
+│   │   ├── 13dfad5521e6de72f6056484447ce6ec426d67
+│   │   └── 45b3fa76ee96eb1609f34eb2f345c47dc60af3
+│   ├── b6
+│   │   └── 0201f2884aac2effcc738f705e37a1870c1a2c
+│   ├── bb
+│   │   └── 228d04ce3439001d49703e2b416fe003d5ab71
+│   ├── c3
+│   │   └── 09d8d276d45fea887026049818d4f47b72cdc0
+│   ├── cd
+│   │   └── 11f659c9f1e9ba0b66f254e18f33b5927aea91
+│   ├── ce
+│   │   └── 024a2d82ec7873e82f1b9f68be4fd3aed16dbc
+│   ├── d3
+│   │   └── d1bff53d97337ff8e603aeb8018a29abb26194
+│   ├── d8
+│   │   └── 8c7d204b4257e34587780cd13def6399f37b09
+│   ├── e4
+│   │   └── cf77d8cf7ba2c683aeb817b5236933915360ee
+│   ├── e7
+│   │   ├── ae544916ed20283e1ceace04813588a727454f
+│   │   └── e73b0d0b81a68554448627309561db31fc6028
+│   ├── e8
+│   │   └── c9a2d7df9b51df947ba528d06382465457ecdb
+│   ├── eb
+│   │   ├── 40f00866b668c6bf3d241c9979dd72909ae616
+│   │   └── f377fe0c0f217336d621b6faf2b4990c66ee60
+│   ├── ec
+│   │   └── b10fbf2ce757b8f58e4ec2e7f0e3592339fb6e
+│   ├── f3
+│   │   └── 986474ac8c9461c4a4f27f732645446890cdac
+│   ├── f5
+│   │   └── 57acf829d773f962d2d3138b5a5ec177e2a87c
+│   ├── info
+│   └── pack
+├── ORIG_HEAD
+└── refs
+    ├── heads
+    │   └── master
+    ├── remotes
+    │   └── origin
+    │       └── master
+    └── tags
+
+57 directories, 68 files
