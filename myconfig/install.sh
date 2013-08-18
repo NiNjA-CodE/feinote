@@ -8,7 +8,7 @@ if [[ -f ~/.vimrc || -h ~/.vimrc ]];then
 	echo "original .vimrc backed up!"
 fi
 
-if (cp ~/personalnote/myconfig/template/vimrc ~/.vimrc);then
+if (cp ~/mynote/myconfig/template/vimrc ~/.vimrc);then
 	echo "updated to my customed config!"
 fi
 
