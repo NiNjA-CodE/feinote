@@ -1,5 +1,6 @@
 #git配置文件
 ============
+
 ##三级git配置文件
 
 按照优先级从低到高配置文件分为一下三级
@@ -22,16 +23,17 @@ git config命令详细介绍可以看帮助手册，使用命令`git congit --he
 ###git配置文件格式
 git配置文件采用的是INI文件格式；例如`~/.gitconfig`如下：
 >
->[alias]
->	ci = commit
->[color]
->	ui = true
+[alias]
+	ci = commit
+[color]
+	ui = true
+<
 INI文件[]叫做节，每一节中包含各种属性，使用`#`或者`；`引入注释
 
 ###如何配置
 配置方法基本有两种：
-1. 打开配置文件(用git config -e命令)直接编辑配置文件
-2. 用git config 命令配置
+1.打开配置文件(用git config -e命令)直接编辑配置文件
+2.用git config 命令配置
 
 用git config 配置方法如下：
 ```
