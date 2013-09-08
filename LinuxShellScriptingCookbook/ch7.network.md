@@ -33,13 +33,16 @@
 * `ping google.com`
 * `ping 192.168.0.1 -c 2` '-c' option to specify package number
 * if ping successfully(conneted),ping will return 0,otherwise return non-0
-> ping ADDRESS -c 2
+
+```
+ping ADDRESS -c 2
 if [ $? -eq 0 ];
 then
 	echo Successful;
 else
 	echo Failure
 fi
+```
 
 **DNS**
 
