@@ -100,7 +100,7 @@ zip is not so widely used on Linux compared to other platforms, but it is ofter 
 
 squassfs can compress 2GB-3GB data to just some 700MB bulk!
 
-transient ignored
+transiently ignored
 
 
 
