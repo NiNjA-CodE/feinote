@@ -62,3 +62,9 @@ fi
 * `route -n`
 * `traceroute google.com`
 
+
+
+
+
+##file transfer
+
