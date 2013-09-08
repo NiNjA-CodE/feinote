@@ -72,8 +72,8 @@ bzip2 offers higher compressing ratio than gzip (provide less bulk).
 * `tar -jcvf fei.tar.bz2 file1 file2 file3`
 * `tar -acvf fei.tar.bz2 file1 file2 file3`
 * `tar -tvf fei.tar.bz2`
-* `tar -jxvf fei.tar.bz2 [-C /path/to/extraction_directory]
-* `tar -zxvf fei.tar.bz2 [-C /path/to/extraction_directory]
+* `tar -jxvf fei.tar.bz2 [-C /path/to/extraction_directory]`
+* `tar -zxvf fei.tar.bz2 [-C /path/to/extraction_directory]`
 * bzip can not use `zcat` command
 
 **lzma compress**
@@ -91,7 +91,7 @@ zip is not so widely used on Linux compared to other platforms, but it is ofter 
 * `unzip -l archive.zip` see content in .zip file,but not uncompress
 * `zip -d archive.zip file` delete specified file from a .zip file
 * `unzip file.zip ` do not delete file.zip
-* `unzip file.zip -d /path/to/extraction_directory
+* `unzip file.zip -d /path/to/extraction_directory`
 
 
 ##squassfs filesystem
