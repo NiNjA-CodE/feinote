@@ -80,20 +80,21 @@ bzip2 offers higher compressing ratio than gzip (provide less bulk).
 
 ignored
 
-**zip**
+##zip:archive and compress command
 
 zip can not only arvhive but also compress
 zip is not so widely used on Linux compared to other platforms, but it is ofter used on internet
 
-* `zip archive.zip file1 file2`
+* `zip archive.zip file1 file2` do not delete original files(different from gzip and bzip2)
 * `zip archive.zip -r file1 file2 folder1 folder2` -r means recursive
 * `zip archive.zip -u newfile` add newfile to .zip file
 * `unzip -l archive.zip` see content in .zip file,but not uncompress
 * `zip -d archive.zip file` delete specified file from a .zip file
-* `unzip file.zip `
+* `unzip file.zip ` do not delete file.zip
 * `unzip file.zip -d /path/to/extraction_directory
 
 
+##squassfs filesystem
 
 **altra compress ratio - squassfs filesystem** 
 
