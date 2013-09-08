@@ -30,7 +30,6 @@
 * tar -xf fei.tar
 * tar -xf fei.tar -C /path/to/extraction_directory
 * tar -xf fei.tar file1 file3
-
 * tar -zxvf fei.tar.gz
 * tar -zxvf fei.tar.gz -C /path/to/extraction_directory
 * tar -jxvf fei.tar.bz2
@@ -39,25 +38,68 @@
 * tar -axvf fei.tar.bz2 [ -C /path/to/extraction_directory ]
 
 
-##compress command**
+##compress command
+
+tar command can only archive files but not compress files,while most users will compress archive after tar files ,decreacing bulk much .
+`gzip` and `bzip2` can only handle a simple file,so always using `tar` to archive multiple files before compressing
+archives always compressed to the formats below:
+
+* file.tar.gz
+* file.tar.bz2
+* file.tar.lzma
+* file.tar.lzo
 
 **gzip**
 
-
-
+* `gzip filename` delete original 'filename' and create compressed file 'filename.gz' 
+* `gzip -9 test.img` compress via specified compressing ratio (1-9;-1=--fast;-9=--best)
+* `gunzip filename.gz` delete compressed file 'filename.gz' and recover original 'filename'
+* `gzip -l test.txt.gz` get info about .gz (eg:compress ratio etc.)
+* `zcat fei.gz` see the content without uncompressing
+* `tar -zcvf fei.tar.gz file1 file2 file3`
+* `tar -acvf fei.tar.gz file1 file2 file3`
+* `tar -tvf fei.tar.gz`
+* `tar -zxvf fei.tar.gz [ -C /path/to/extraction_directory]`
+* `tar -axvf fei.tar.gz [ -C /path/to/extraction_directory]`
 
 **bzip2**
 
+bzip2 offers higher compressing ratio than gzip (provide less bulk).
+
+* `bzip2 filename` delete original 'filename' and create compressed file 'filename.bz2'
+* `bzip2 -1 test.img` compress using specified compressing ratio (1-9;-1=--fast;-9=--best)
+* `bunzip2 filename.bz2` delete compressed file 'filename.bz2' and recover original 'filename'
+* `tar -jcvf fei.tar.bz2 file1 file2 file3`
+* `tar -acvf fei.tar.bz2 file1 file2 file3`
+* `tar -tvf fei.tar.bz2`
+* `tar -jxvf fei.tar.bz2 [-C /path/to/extraction_directory]
+* `tar -zxvf fei.tar.bz2 [-C /path/to/extraction_directory]
+* bzip can not use `zcat` command
+
+**lzma compress**
+
+ignored
+
+**zip**
+
+zip can not only arvhive but also compress
+zip is not so widely used on Linux compared to other platforms, but it is ofter used on internet
+
+* `zip archive.zip file1 file2`
+* `zip archive.zip -r file1 file2 folder1 folder2` -r means recursive
+* `zip archive.zip -u newfile` add newfile to .zip file
+* `unzip -l archive.zip` see content in .zip file,but not uncompress
+* `zip -d archive.zip file` delete specified file from a .zip file
+* `unzip file.zip `
+* `unzip file.zip -d /path/to/extraction_directory
 
 
 
+**altra compress ratio - squassfs filesystem** 
 
+squassfs can compress 2GB-3GB data to just some 700MB bulk!
 
-
-
-
-
-
+transient ignored
 
 
 
