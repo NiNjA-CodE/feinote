@@ -25,6 +25,8 @@
 * `ifconfig eth0 192.168.1.5`
 * `ifconfig eth0 192.168.1.5 netmask 255.255.255.0`
 * `ifconfig eth0 hw ether 00:1c:bf:87:25:d5`
+* `ifconfig eth0 down`
+* `ifconfig eth0 up`
 
 **ip**
 
