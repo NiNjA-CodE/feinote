@@ -2,6 +2,30 @@
 
 #install.sh:install my customed configuration
 
+#install packages
+
+cat /etc/issue | grep "Ubuntu" &> /dev/null
+if [[ $? == 0 ]]
+then
+	sudo apt-get install zsh\
+			tmux\
+			vim\
+			ctags\
+			g++
+fi
+
+
+cat /etc/issue | grep "Fedora" &> /dev/null
+if [[ $? == 0 ]]
+then
+	sudo yum install zsh\
+			tmux\
+			vim\
+			ctags\
+			g++
+fi
+
+
 #backup original .vimrc config
 if [[ -f ~/.vimrc || -h ~/.vimrc ]];then
 	mv ~/.vimrc ~/.vimrc.orig
