@@ -4,7 +4,7 @@
 
 #install packages
 
-cat /etc/issue | grep "Ubuntu" &> /dev/null
+cat /etc/issue | grep -E "Ubuntu|Debian" &> /dev/null
 if [[ $? == 0 ]]
 then
 	sudo apt-get install zsh\
@@ -15,7 +15,7 @@ then
 fi
 
 
-cat /etc/issue | grep "Fedora" &> /dev/null
+cat /etc/issue | grep -E "Fedora|CentOS" &> /dev/null
 if [[ $? == 0 ]]
 then
 	sudo yum install zsh\
