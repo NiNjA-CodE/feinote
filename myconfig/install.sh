@@ -2,6 +2,9 @@
 
 #install.sh:install my customed configuration
 
+#print colorful charactors
+source "./lib/colorecho.sh"
+
 #install packages
 #be sure you have install git before execute this script
 #
@@ -9,7 +12,7 @@
 which git &> /dev/null
 if [[ $? != 0 ]]
 then 
-	echo "you havn't install git\n
+	yellow "you havn't install git
 	please install git before execute this script"
 	#exit #needn't exit 'cause will install later 
 fi
@@ -44,23 +47,23 @@ fi
 if [[ -f ~/.vimrc || -h ~/.vimrc ]];
 then
 	mv ~/.vimrc ~/.vimrc.orig
-	echo "original .vimrc backed up!"
+	red "original .vimrc backed up!"
 fi
 
 if (cp ~/mynote/myconfig/template/vimrc ~/.vimrc);
 then
-	echo "vim updated to my customed config!"
+	red "vim updated to my customed config!"
 fi
 
 #.tmux.conf
 if [[ -f ~/.tmux.conf || -h ~/.tmux.conf ]];
 then
 	mv ~/.tmux.conf ~/.tmux.conf.orig
-	echo "original .tmux.conf backed up!"
+	red "original .tmux.conf backed up!"
 fi
 
 cp ~/mynote/myconfig/template/tmux.conf ~/.tmux.conf &&
-	echo "tmux updated to my customed config!"
+	red "tmux updated to my customed config!"
 
 #install oh-my-zsh ( a coustomed zsh configuration )
 #
@@ -72,20 +75,20 @@ ls -a ~ | grep ".oh-my-zsh" &> /dev/null || {
 
 if [[ -f ~/.zshrc || -h ~/.zshrc ]]
 then
-	echo ".zshrc conf file exsit!  +++++  backing up it to ~/.zshrc.pre"
+	yellow ".zshrc conf file exsit!  +++++  backing up it to ~/.zshrc.pre"
 	mv ~/.zshrc ~/.zshrc.pre
 fi
 
-echo "Using the oh my zsh template file and adding it to ~/.zshrc"
+yellow "Using the oh my zsh template file and adding it to ~/.zshrc"
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
-echo "Copying your current PATH and adding it to the end of ~/.zshrc for you"
+yellow "Copying your current PATH and adding it to the end of ~/.zshrc for you"
 echo "export PATH=\$PATH:$PATH" >> ~/.zshrc
 
-echo "changing your default shell to zsh!!!!!!!"
+red "changing your default shell to zsh!!!!!!!"
 chsh -s `which zsh`
 #chsh -s $(which zsh) #this line has the same impact
 
 /usr/bin/env zsh
 source ~/.zshrc
-echo "oh-my-zsh configuration completed!!!"
+red "oh-my-zsh configuration completed!!!"
