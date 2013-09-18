@@ -37,33 +37,6 @@ then
 			g++
 fi
 
-#install oh-my-zsh ( a coustomed zsh configuration )
-#
-
-#if not exsit file ".oh-my-zsh",then git clone repo from github to ~/.oh-my-zsh
-ls -a | grep ".oh-my-zsh " &> /dev/null || 
-	git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-
-if [[ -f ~/.zshrc || -h ~/.zshrc ]]
-then
-	echo ".zshrc conf file exsit!\n
-	backing up it to ~/.zshrc.pre"
-	mv ~/.zshrc ~/.zshrc.pre
-fi
-
-echo "Using the oh my zsh template file and adding it to ~/.zshrc"
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-
-echo "Copying your current PATH and adding it to the end of ~/.zshrc for you"
-echo "export PATH=\$PATH:$PATH" >> ~/.zshrc
-
-echo "changing your default shell to zsh!!!!!!!"
-chsh -s `which zsh`
-#chsh -s $(which zsh) #this line has the same impact
-
-/usr/bin/env zsh
-source ~/.zshrc
-
 #backup original configs and set new conf files
 #
 
@@ -88,3 +61,31 @@ fi
 
 cp ~/mynote/myconfig/template/tmux.conf ~/.tmux.conf &&
 	echo "tmux updated to my customed config!"
+
+#install oh-my-zsh ( a coustomed zsh configuration )
+#
+
+#if not exsit file ".oh-my-zsh",then git clone repo from github to ~/.oh-my-zsh
+ls -a ~ | grep ".oh-my-zsh" &> /dev/null || {
+		git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+}
+
+if [[ -f ~/.zshrc || -h ~/.zshrc ]]
+then
+	echo ".zshrc conf file exsit!  +++++  backing up it to ~/.zshrc.pre"
+	mv ~/.zshrc ~/.zshrc.pre
+fi
+
+echo "Using the oh my zsh template file and adding it to ~/.zshrc"
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
+echo "Copying your current PATH and adding it to the end of ~/.zshrc for you"
+echo "export PATH=\$PATH:$PATH" >> ~/.zshrc
+
+echo "changing your default shell to zsh!!!!!!!"
+chsh -s `which zsh`
+#chsh -s $(which zsh) #this line has the same impact
+
+/usr/bin/env zsh
+source ~/.zshrc
+echo "oh-my-zsh configuration completed!!!"
