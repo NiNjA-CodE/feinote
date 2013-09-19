@@ -13,9 +13,6 @@ do
 done
 
 # install packages
-# be sure you have install git before execute this script
-#
-
 which git &> /dev/null
 if [[ $? != 0 ]]
 then 
@@ -28,29 +25,16 @@ fi
 cat /etc/issue | grep -E "Ubuntu|Debian" &> /dev/null
 if [[ $? == 0 ]]
 then
-	sudo apt-get install zsh\
-			tmux\
-			vim\
-			ctags\
-			git\
-			g++
+	sudo apt-get install zsh tmux vim ctags git g++
 fi
 
 cat /etc/issue | grep -E "Fedora|CentOS" &> /dev/null
 if [[ $? == 0 ]]
 then
-	sudo yum install zsh\
-			tmux\
-			vim\
-			ctags\
-			git\
-			g++
+	sudo yum install zsh tmux vim ctags git g++
 fi
 
 # backup original configs and set new conf files
-#
-
-# .vimrc
 if [[ -f ~/.vimrc || -h ~/.vimrc ]];
 then
 	mv ~/.vimrc ~/.vimrc.orig
@@ -62,7 +46,6 @@ then
 	red "vim updated to my customed config!"
 fi
 
-# .tmux.conf
 if [[ -f ~/.tmux.conf || -h ~/.tmux.conf ]];
 then
 	mv ~/.tmux.conf ~/.tmux.conf.orig
@@ -73,9 +56,6 @@ cp ~/mynote/myconfig/template/tmux.conf ~/.tmux.conf &&
 	red "tmux updated to my customed config!"
 
 # install oh-my-zsh ( a coustomed zsh configuration )
-#
-
-# if not exsit file ".oh-my-zsh",then git clone repo from github to ~/.oh-my-zsh
 ls -a ~ | grep ".oh-my-zsh" &> /dev/null || {
 		git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 }
