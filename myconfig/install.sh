@@ -41,7 +41,7 @@ then
 	red "original .vimrc backed up!"
 fi
 
-if (cp ~/mynote/myconfig/template/vimrc ~/.vimrc);
+if (cp ~/MyNote/myconfig/template/vimrc ~/.vimrc);
 then
 	red "vim updated to my customed config!"
 fi
@@ -52,7 +52,7 @@ then
 	red "original .tmux.conf backed up!"
 fi
 
-cp ~/mynote/myconfig/template/tmux.conf ~/.tmux.conf &&
+cp ~/MyNote/myconfig/template/tmux.conf ~/.tmux.conf &&
 	red "tmux updated to my customed config!"
 
 # install oh-my-zsh ( a coustomed zsh configuration )
