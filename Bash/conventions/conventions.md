@@ -54,5 +54,17 @@ not using this syntax appoach
 ```
 if commands in "()" or test condition not satisfied, do action1/action2/action3...
 
-## 
+## detect system environmet
+
+Some software need to detect system enviroment,and then do different movement according
+to different system environment conditions
+
+There are some ways to detect environment,collecting below;
+
+```
+cat /ect/issue | grep -E "Ubuntu|Debian" &&
+	do true_action ||
+	do false_action
+```
+
 
