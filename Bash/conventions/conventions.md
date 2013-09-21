@@ -107,7 +107,7 @@ cat /ect/issue | grep -E "Ubuntu|Debian" &&
 
 
 
-##4. functions
+##4. Functions
 
 function syntax like this:
 
