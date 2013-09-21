@@ -3,6 +3,7 @@
 1. Prompt to input
 2. Another appoach to realize if else sentences
 3. Detect system environment
+4. Functions
 
 ##1. Prompt to input
 
@@ -10,6 +11,7 @@
 while true
 do
 	read -p "prompt infomations to user for input [Y/N] " RESP
+
 	case $RESP in
 	[yY])
 		do action1
@@ -26,8 +28,8 @@ do
 done
 ```
 
-you need not "[]" everytime,if a char and a string do the same action you can code like
-this:
+you need not "[]" everytime,if a char and a string do the same action you can 
+code like this:
 
 ```
 #!/usr/bin/env bash
@@ -36,6 +38,7 @@ while true
 do
 	read -p "if in condition1,input 1/a/A/conditon1 
 	if in condition2,input 2/b/B/condition2" RESP
+
 	case $RESP in
 	1|a|A|condition1)
 		echo "condition1 selected correctly!"
@@ -52,12 +55,13 @@ done
 ```
 
 You can not use `"1|a|A|condition1")` (can not put regular expression in "")
+
 You can not use `[1|a|A|condition1])` (can not put regular expression in ) enither
 
 this piece of code can make user to input certain options untill input right, then bash
 do some actions correspondently
 
-##2. Another appoach to relize if else sentence
+##2. Another appoach to realize if else sentence
 
 ```
 [ -w $HOME/.bash_profile ] &&
@@ -84,6 +88,7 @@ not using this syntax appoach
 	do action3 ||
 	...
 ```
+
 if commands in "()" or test condition not satisfied, do action1/action2/action3...
 
 ##3. Detect system environmet
@@ -144,6 +149,7 @@ do
 	read -p "if you are in CONDITION1,please input 1 \n
 			if you are in CONDITION2,please input 2 \n
 			if you are in CONDITION3,please input 3" RESP
+
 	# input what to do
 	read -p "please input raw data you want to process!" USERDATA
 
@@ -166,4 +172,4 @@ do
 done
 ```
 		
-	
+##5. 
