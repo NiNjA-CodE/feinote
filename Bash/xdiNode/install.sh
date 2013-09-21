@@ -88,3 +88,7 @@ then
 fi
 
 service inodeauthservice start
+
+##my addition
+#ln -s /usr/lib/i386-linux-gnu/libjpeg.so.8 /usr/lib/i386-linux-gnu/libjpeg.so.62
+#ln -s /usr/lib/i386-linux-gnu/libtiff.so.4 /usr/lib/i386-linux-gnu/libtiff.so.3
