@@ -25,7 +25,7 @@ done
 this piece of code can make user to input certain options untill input right, then bash
 do some actions correspondently
 
-## aother appoach to relize if else sentence
+## another appoach to relize if else sentence
 
 ```
 [ -w $HOME/.bash_profile ] &&
