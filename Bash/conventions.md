@@ -23,6 +23,7 @@ do
 		;;
 	*)
 		echo "please choose y or n."
+		continue
 		;;
 	esac
 done
