@@ -81,6 +81,18 @@ if commands in "()" executed correctly,do action1/action2/action3...
 using this syntax because it is hard to exexute multiple command in one condition if
 not using this syntax appoach
 
+Another way to realize this:
+
+```
+( ls | grep -E "fei|lun" ) && {
+		do action1
+		do action2
+		do action3
+		...
+}
+```
+Using brace!
+
 ```
 [[ -f $HOME/.bash_profile || -h $HOME/.bash_profile ]] ||
 	do action1 ||
