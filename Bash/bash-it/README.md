@@ -4,7 +4,7 @@
 
 * you can find the github page [clickhere](https://github.com/revans/bash-it)
 * clone the source code `git clone http://github.com/revans/bash-it.git ~/.bash_it`
-* *./install.sh*
+* **./install.sh**
 * make options following prompt
 
 ##the process of the install script
