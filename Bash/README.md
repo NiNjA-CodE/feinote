@@ -86,7 +86,8 @@ set variable's properity
 you can get more informations [here](http://bbs.chinaunix.net/thread-529722-1-1.html)
 
 ```
-typeset用于设置变量属性,如大小写,宽度,左右对齐等都可以用typeset来控制, 当用typeset改变一个变量的属性时,这种改变是永久的,下面以ksh为例,演示typeset的几种典型用法
+typeset用于设置变量属性,如大小写,宽度,左右对齐等都可以用typeset来控制, 当 用typeset改
+变一个变量的属性时,这种改变是永久的,下面以ksh为例,演示typeset的几种典型用法
 
 
 
