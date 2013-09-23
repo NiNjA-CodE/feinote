@@ -9,14 +9,15 @@
 7. source
 8. >
 9. function
-10. set/unset
+10. null 
 11. comment
 12. typeset
+13. set/unset
 
 ##1. if 
 
 ```
-if [ condition ]
+if [ condition ];
 then
 	statement
 	if [ condition ];then
@@ -38,7 +39,7 @@ do
 	statement
 	if [ condition ];then
 		statement
-	if
+	fi
 done
 ```
 
@@ -82,7 +83,7 @@ esac
 
 ##12. typeset
 
-set variable's properity
+set variable's properties
 you can get more informations [here](http://bbs.chinaunix.net/thread-529722-1-1.html)
 
 ```
