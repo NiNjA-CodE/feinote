@@ -1,19 +1,19 @@
 #My Shell Code Style
 
-* if
-* while
-* for
-* case
-* read
-* .
-* source
-* >
-* function
-* set/unset
-* comment
-* examples
+1. if
+2. while
+3. for
+4. case
+5. read
+6. .
+7. source
+8. >
+9. function
+10. set/unset
+11. comment
+12. examples
 
-##'if' statement
+##1. if 
 
 ```
 if [ condition ]
