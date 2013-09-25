@@ -9,10 +9,11 @@
 7. source
 8. >
 9. function
-10. null 
+10. shift[n] 
 11. comment
 12. typeset
 13. set/unset
+14. basename/dirname
 
 ##1. if 
 
@@ -55,6 +56,55 @@ do
 	if [ condition ];then
 		statement2
 	fi
+done
+```
+in the template before,list can be replace by:
+* `\*.txt` file wildcard not must be quoted by ""
+* `一对反引号`
+* `$(command)`
+* `$\*` command parameters
+
+**Often Usage**
+
+**1**
+```
+for sth in `ls *.txt`
+do
+	action
+done
+```
+
+**2**
+```
+for sth in $(ls | grep "bash")
+do
+	action
+done
+```
+
+**3(Do not understand still)**
+```
+for sth (${ZSH}/lib/*.zsh)
+do
+	action
+done
+```
+
+**4(Example from bash-it/install.sh)**
+```
+for type in "aliases" "plugins" "completion"
+do
+	actions
+done
+```
+
+**5**
+```
+LIST="rootfs usr data data2" 
+for d in $LIST; do 
+	mount /backup/$d 
+	rsync -ax --exclude fstab --delete /$d/ /backup/$d/ 
+	umount /backup/$d 
 done
 ```
 
