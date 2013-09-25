@@ -14,6 +14,8 @@
 12. typeset
 13. set/unset
 14. basename/dirname
+15. sed
+16. awk/gawk=gnu awk
 
 ##1. if 
 
@@ -63,6 +65,7 @@ in the template before,list can be replace by:
 * `一对反引号`
 * `$(command)`
 * `$\*` command parameters
+* `{1..100}`
 
 **Often Usage**
 
@@ -108,6 +111,14 @@ for d in $LIST; do
 done
 ```
 
+**6**
+```
+for i in {1..3}
+do
+	echo "$i"
+done
+```
+
 ##4. case
 
 ```
@@ -128,10 +139,51 @@ in
 esac
 ```
 
-##5. comment
+##5. Read
+read input from stdin
+There are a army options,often usages are list below:
+
+```
+while true
+do
+	read -p "prompt info to stdout" RESP
+
+	case $RESP
+	in
+		"y|Y")
+			action1
+			break
+			;;
+		"n|N")
+			action2
+			break
+			;;
+		*）
+			echo "input illegle"
+			continue
+	 		;;
+	esac
+done
+```
+		
+##6. .
 
 
-##12. typeset
+##7. source
+
+
+##8. > >> || && | etc. symbols
+
+##9. Functions
+
+
+##10. shift[n]
+
+
+##11. Comment
+
+
+##12. Typeset
 
 set variable's properties
 you can get more informations [here](http://bbs.chinaunix.net/thread-529722-1-1.html)
@@ -248,6 +300,16 @@ typeset -x #显示被导出的变量
 typeset a b c #如果在一个函数里定义,则把a b c创建为局部变量
 typeset -r x=var#设置一个只读变量
 ```
+
+##13. set/unset
+
+
+##14. basename/dirname
+
+##15. sed
+
+##16. awk/gawk=gnu awk
+
 
 
 
