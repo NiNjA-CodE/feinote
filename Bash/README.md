@@ -16,6 +16,7 @@
 14. basename/dirname
 15. sed
 16. awk/gawk=gnu awk
+17. export
 
 ##1. if 
 
@@ -85,7 +86,7 @@ do
 done
 ```
 
-**3(Do not understand still)**
+**3(Do not understand still;from ~/.oh-my-zsh/oh-my-zsh.sh)**
 ```
 for sth (${ZSH}/lib/*.zsh)
 do
@@ -311,5 +312,6 @@ typeset -r x=var#设置一个只读变量
 ##16. awk/gawk=gnu awk
 
 
+##17. export
 
 
