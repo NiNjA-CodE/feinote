@@ -14,11 +14,11 @@
 	- asynchronous IO
 
 - **IPC = Inter Process Communication**
-	- 消息传递(pipe/FIFO/消息队列)
+	- 消息传递
 		- pipe
 		- FIFO
 		- 消息队列
-	- 同步()
+	- 同步
 		- 互斥量
 		- 条件变量
 		- 读写锁
@@ -27,7 +27,7 @@
 	- 共享内存
 		- 匿名的
 		- 具名的
-	- 远程过程调用(Solaris门 & Sun RPC)
+	- 远程过程调用
 		- Soloris门
 		- Sun RPC
 	
