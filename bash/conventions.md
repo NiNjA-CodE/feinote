@@ -1,4 +1,4 @@
-# bash conventional usage senario syntax 
+# bash conventional usage scenario 
 
 1. Prompt to input
 2. Another appoach to realize if else sentences
