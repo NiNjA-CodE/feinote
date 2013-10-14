@@ -9,8 +9,9 @@
  - 04 friend
  - 05 inline
  - 06 namespace
-
-
+ - 07 boost::noncopyable
+ - 08 boost::array
+ - 09 boost::function
 
 
 
@@ -71,5 +72,26 @@ used only for constructor of class
 - [IBM](http://publib.boulder.ibm.com/infocenter/comphelp/v8v101/index.jsp?topic=%2Fcom.ibm.xlcpp8a.doc%2Flanguage%2Fref%2Fexplicit_keyword.htm)
 - [visual studio](http://msdn.microsoft.com/en-us/library/vstudio/h1y7x448.aspx)
 
+##04.friend
 
+##05.inline
 
+##06.namespace
+
+##07.boost::noncopyable
+
+**reference**
+
+- [CSDN](http://blog.csdn.net/huang_xw/article/details/8248960)
+
+##08.boost::array
+
+**reference**
+
+- [CSDN](http://blog.csdn.net/huang_xw/article/details/8248361)
+
+##09.boost::function
+
+**reference**
+
+- [CSDN](http://blog.csdn.net/huang_xw/article/details/8249278)
