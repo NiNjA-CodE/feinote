@@ -3,7 +3,10 @@
  this file record strange C/C++ syntax entercounted
 
 ##Contents
- - static const int foo = 42
+ - 01 static 
+ 	- `static const foo = 42` means what?
+ - 02 const
+ - 03 explicit
 
 
 
@@ -51,3 +54,8 @@ see this question for more details about static variables' lifetime.
 static means the value is shared between all instances of the class and const 
 means it doesn't change (and can be initialized inline) this is the only case 
 in which neither the static nor the const are redundant.
+
+##02.const
+
+##03.explicit
+used only for constructor of class
