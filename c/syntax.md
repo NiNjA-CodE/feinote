@@ -1,13 +1,14 @@
-#SYNTAX
+#SYNTAX of C/C++
 
- this file record strange C/C++ syntax entercounted
+ This file record strange C/C++ syntax entercounted
 
 ##Contents
  - 01 static 
- 	- `static const foo = 42` means what?
  - 02 const
  - 03 explicit
-
+ - 04 friend
+ - 05 inline
+ - 06 namespace
 
 
 
