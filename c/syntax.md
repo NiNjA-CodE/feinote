@@ -16,6 +16,10 @@
 
 ##01.static
 
+ **reference**
+ [stackoverflow1](http://stackoverflow.com/questions/177437/const-static)
+ [stackoverflow2](http://stackoverflow.com/questions/1312241/using-a-static-const-int-in-a-struct-class)
+
 A lot of people gave the basic answer but nobody pointed out that const 
 defaults to static (and some gave wrong information). See the C++98 standard 
 section 3.5.3.
@@ -59,3 +63,11 @@ in which neither the static nor the const are redundant.
 
 ##03.explicit
 used only for constructor of class
+
+**reference**
+ [stackoverflow](http://stackoverflow.com/questions/121162/what-does-the-explicit-keyword-in-c-mean)
+ [IBM](http://publib.boulder.ibm.com/infocenter/comphelp/v8v101/index.jsp?topic=%2Fcom.ibm.xlcpp8a.doc%2Flanguage%2Fref%2Fexplicit_keyword.htm)
+ [visual studio](http://msdn.microsoft.com/en-us/library/vstudio/h1y7x448.aspx)
+
+
+
