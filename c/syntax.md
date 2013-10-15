@@ -17,7 +17,7 @@
 
 
 
-##01.static
+##001.static
 
 **reference**
 
@@ -63,9 +63,9 @@ static means the value is shared between all instances of the class and const
 means it doesn't change (and can be initialized inline) this is the only case 
 in which neither the static nor the const are redundant.
 
-##02.const
+##002.const
 
-##03.explicit
+##003.explicit
 used only for constructor of class
 
 **reference**
@@ -73,25 +73,25 @@ used only for constructor of class
 - [IBM](http://publib.boulder.ibm.com/infocenter/comphelp/v8v101/index.jsp?topic=%2Fcom.ibm.xlcpp8a.doc%2Flanguage%2Fref%2Fexplicit_keyword.htm)
 - [visual studio](http://msdn.microsoft.com/en-us/library/vstudio/h1y7x448.aspx)
 
-##04.friend
+##004.friend
 
-##05.inline
+##005.inline
 
-##06.namespace
+##006.namespace
 
-##07.boost::noncopyable
+##007.boost::noncopyable
 
 **reference**
 
 - [CSDN](http://blog.csdn.net/huang_xw/article/details/8248960)
 
-##08.boost::array
+##008.boost::array
 
 **reference**
 
 - [CSDN](http://blog.csdn.net/huang_xw/article/details/8248361)
 
-##09.boost::function
+##009.boost::function
 
 **reference**
 
