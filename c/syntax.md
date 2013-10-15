@@ -3,15 +3,16 @@
  This file record strange C/C++ syntax entercounted
 
 ##Contents
- - 01 static 
- - 02 const
- - 03 explicit
- - 04 friend
- - 05 inline
- - 06 namespace
- - 07 boost::noncopyable
- - 08 boost::array
- - 09 boost::function
+ - 001 static 
+ - 002 const
+ - 003 explicit
+ - 004 friend
+ - 005 inline
+ - 006 namespace
+ - 007 boost::noncopyable
+ - 008 boost::array
+ - 009 boost::function
+ - 010 restrict keyworld
 
 
 
@@ -95,3 +96,10 @@ used only for constructor of class
 **reference**
 
 - [CSDN](http://blog.csdn.net/huang_xw/article/details/8249278)
+
+##010.restrict keyworld
+
+**reference**
+
+- [CSDN](http://blog.csdn.net/llf021421/article/details/8092602)
+
