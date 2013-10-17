@@ -2,4 +2,4 @@
 
 - ISO C
 - IEEE POSIX
-- Single UNIX Specification
+- Single UNIX Specification = SUS

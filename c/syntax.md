@@ -14,6 +14,7 @@
  - 009 boost::function
  - 010 restrict keyworld
  - 011 virtual keyworld(C++)
+ - 012 auto keyworld(c)
 
 
 
@@ -106,4 +107,4 @@ used only for constructor of class
 ##011.virtual keyworld
 
 
-
+##012.auto keyworld(c)
