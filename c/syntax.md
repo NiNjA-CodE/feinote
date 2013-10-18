@@ -4,8 +4,7 @@
 
 ##Contents
  - 001 static 
- - 002 const
- - 003 explicit
+ - 002 const - 003 explicit
  - 004 friend
  - 005 inline
  - 006 namespace
