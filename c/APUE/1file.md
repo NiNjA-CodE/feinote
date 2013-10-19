@@ -5,14 +5,14 @@
 - int open(o)
 - int creat()
 - int close()
-- off\_t lseek(a)
-- ssize\_t read()
-- ssize\_t write()
+- off_t lseek(a)
+- ssize_t read()
+- ssize_t write()
 
 
 ### open()
 
-int open(const char \*pathname, int oflag, .../* mode_t mode */ );
+int open(const char *pathname, int oflag, .../* mode_t mode */ );
 
 - #include <fcntl.h>
 - oflag (can combined by "|")
@@ -33,10 +33,10 @@ int open(const char \*pathname, int oflag, .../* mode_t mode */ );
 
 ### creat()
 
-int creat(const char * pathname, mode\_t mode);
+int creat(const char * pathname, mode_t mode);
 
 - #include <fcntl.h>
-- mode\_t mode(you might think of `chmod`command in shell ,mod)
+- mode_t mode(you might think of `chmod`command in shell ,mod)
 	- S_IRUER
 	- S_IWUSR
 	- S_IXUSR
