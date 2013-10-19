@@ -112,4 +112,5 @@ used only for constructor of class
 ##012.auto keyworld(c)
 
 ##015.assert()
+sort of like `set -e` option in bash
 * [asser()函数用法总结](http://www.cnblogs.com/ggzss/archive/2011/08/18/2145017.html)
