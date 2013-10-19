@@ -1,6 +1,6 @@
 #SYNTAX of C/C++
 
- This file record strange C/C++ syntax entercounted
+ This file record strange C/C++ syntax encounted
 
 ##Contents
  - 001 static 
@@ -10,10 +10,12 @@
  - 006 namespace
  - 007 boost::noncopyable
  - 008 boost::array
- - 009 boost::function
+ - 009 boost::function\<\> name
  - 010 restrict keyworld
  - 011 virtual keyworld(C++)
  - 012 auto keyworld(c)
+ - 013 boost::ptr_vector<muduo::Thread> threads_
+ - 014 boost::shared_ptr<pid_t> tid_
 
 
 
