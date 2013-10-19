@@ -16,6 +16,7 @@
  - 012 auto keyworld(c)
  - 013 boost::ptr_vector<muduo::Thread> threads_
  - 014 boost::shared_ptr<pid_t> tid_
+ - 015 assert.h <assert.h>
 
 
 
@@ -109,3 +110,6 @@ used only for constructor of class
 
 
 ##012.auto keyworld(c)
+
+##015.assert()
+* [asser()函数用法总结](http://www.cnblogs.com/ggzss/archive/2011/08/18/2145017.html)
