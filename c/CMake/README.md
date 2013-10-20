@@ -37,6 +37,21 @@ CMake
 	- set(d "${b} delta")
 	- set(e ${b} "delta")
 - math(EXPR var "1+3*4)
+- list()
+- string()
+- find_package()
+- include_directories()
+- add_subdirectory()
+- add_library()
+- add_executable()
+- target_link_libraries()
+- set_target_properties()
+- install()
+- file()
+- cmake_minimum_required(VERSION 2.6)
+- project()
+- add_custom_command()
+- set_source-files_properties()
 
 ## Statements
 
