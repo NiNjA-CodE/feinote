@@ -1,7 +1,7 @@
 CMake
 =====
 
-## Content
+**Content**
 - Resources
 - Tips for CMake
 - Commands
@@ -9,9 +9,11 @@ CMake
 - Function and Macro
 
 ## Resources
+
 - [Wikipedia](http://zh.wikibooks.org/zh-cn/CMake_%E5%85%A5%E9%96%80)
 
 ## Tips for CMake
+
 - CMake 的语法非常单纯，由指令(command)和注解所组成，所有的空白、换行、tab 都没有特殊作用，仅为语汇元素的区隔。
 - 凡是由 # 字符开头一直到换行字符间的内容皆会被视为注解，不会有任何作用。
 - 指令为指令名称加上小括号，括号内可以有零或若干个参数，指令则依照出现在 CMakeLists 当中的顺序执行。
@@ -21,6 +23,7 @@ CMake
 - 不过一个常见的风格是一切都用大写命名，只要按下 caps lock 从头写到尾即可。
 
 ## Commands
+
 - message()
 	- message(${var})
 	- message("helloworld")
@@ -36,6 +39,7 @@ CMake
 - math(EXPR var "1+3*4)
 
 ## Statements
+
 **if;elseif;else;endif**
 
 ```
@@ -89,8 +93,10 @@ instance waitting
 
 ## Functions and Macro
 CMake 有两种设计子程序的方式：
+
 * function ... endfunction
 * macro ... endmacro
+
 主要的差别在于 function 会建立 local的变量，而 macro 则会影响 global 变量。
 
 ```
