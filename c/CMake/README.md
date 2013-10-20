@@ -1,6 +1,13 @@
 CMake
 =====
 
+## Content
+- Resources
+- Tips for CMake
+- Commands
+- Statements(if/Loop contral)
+- Function and Macro
+
 ## Resources
 - [Wikipedia](http://zh.wikibooks.org/zh-cn/CMake_%E5%85%A5%E9%96%80)
 
@@ -20,18 +27,13 @@ CMake
 - set(VARIABLE value)
 	- set(a alpha beta gamma)
 	- set(b "alpha beta gamma")
-	- set(c "alpha
-		beta
-		gamma
+	- set(c "alpha\
+		beta\
+		gamma\
 		)
 	- set(d "${b} delta")
 	- set(e ${b} "delta")
 - math(EXPR var "1+3*4)
-- 
-
-
-
-
 
 ## Statements
 **if;elseif;else;endif**
@@ -47,9 +49,9 @@ else(expr)
 	command2(arg)
 endif(expr) 
 ```
-- condition judge
+* condition judge
 `if((expr) AND (expr OR (expr)))`
-- NB(Note Board)
+* NB(Note Board)
 ```
 # 下面兩行意義相同
 if (foo)
@@ -75,5 +77,23 @@ endforeach()
 instance waitting
 ```
 
-## Functions
+## Functions and Macro
+CMake 有两种设计子程序的方式：
+* function ... endfunction
+* macro ... endmacro
+主要的差别在于 function 会建立 local的变量，而 macro 则会影响 global 变量。
+```
+# 定義名為 print1 的 macro 
 
+macro(print1 MESSAGE)
+	message(${MESSAGE})
+endmacro(print1)
+
+# 定義名為 print2 的 function
+function(print2 MESSAGE)
+	message(${MESSAGE})
+endfunction(print2) 
+
+print1("from print1")
+print2("from print2")
+```
