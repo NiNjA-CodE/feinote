@@ -37,6 +37,7 @@ CMake
 
 ## Statements
 **if;elseif;else;endif**
+
 ```
 # 當 expr 值為下列其中之一時，執行 command1：
 #    ON, 1, YES, TRUE, Y
@@ -49,9 +50,15 @@ else(expr)
 	command2(arg)
 endif(expr) 
 ```
+
 * condition judge
-`if((expr) AND (expr OR (expr)))`
+
+```
+if((expr) AND (expr OR (expr)))
+```
+
 * NB(Note Board)
+
 ```
 # 下面兩行意義相同
 if (foo)
@@ -64,6 +71,7 @@ if (${foo} AND ${bar})
 
 **Loop contral**
 * foreach...endforeach
+
 ```
 set(V  alpha beta gamma)
 message(${V})
@@ -72,7 +80,9 @@ foreach(i  ${V})
 	message(${i})
 endforeach() 
 ```
+
 * while...endwhile
+
 ```
 instance waitting
 ```
@@ -82,6 +92,7 @@ CMake 有两种设计子程序的方式：
 * function ... endfunction
 * macro ... endmacro
 主要的差别在于 function 会建立 local的变量，而 macro 则会影响 global 变量。
+
 ```
 # 定義名為 print1 的 macro 
 
@@ -97,3 +108,4 @@ endfunction(print2)
 print1("from print1")
 print2("from print2")
 ```
+
