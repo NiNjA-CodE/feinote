@@ -61,10 +61,10 @@ so you need to:
 |git commit  |
 --------------
      ||
-		 \/
+  	 \/
     ( A )
      ||
-		 \/
+  	 \/
 --------------         -----------------------------------          ------------
 |            |         |                                 |          |* discuss |
 |            | failed   -------------  OK   -------------| failed   |* modify  |
@@ -85,13 +85,13 @@ so you need to:
      ||                                     --------------    
      ||                                          ||SUCCEED      
      ||                                          ||             
-		 \/                                          \/
+     \/                                          \/
 --------------------------------------------------------------------------------
 |                                           |                    |
 A  commit A                                 M-- Merge ci         M-- Merge ci
 O  init commit                              | B commit B         | B commit B
 |                                           A | commit A         A | commit A
-|																						I-- init commit      I-- init commit
+|	                                          I-- init commit      I-- init commit
 |                                           |                    |
 --------------------------------------------------------------------------------
 
