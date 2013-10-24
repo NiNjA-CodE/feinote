@@ -1,9 +1,10 @@
-Git Troubleshooting
+Git Troubleshootings
 ===================
 
-## trouble list
+## Trouble list
 
 1. Ownnership problems
+2. 
 
 ## 1.Ownnership problems
 
