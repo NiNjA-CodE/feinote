@@ -9,6 +9,15 @@ It means:
 * not serilazied branch figure
 * remote newest commit is not the father commit of local newest commit
 
+## Overview of workflow senerioes
+
+1. make a commit locally
+2. git push (OK / failed)
+3. git pull if push failed(non-fast-forward) (OK / failed)
+4. discuss if pull clashed, conclude a final resolution
+5. modify and make a considered commit
+6. git push (succeed)
+
 ## typical senerioes
 
 1. **make a commit locally**
@@ -25,6 +34,7 @@ your local origin/master is not real-time;
 remote origin/master have updated (changed) but local origin/master unchanged;
 remote origin/master not equals local master commit's fater commit!
 then,you need to:
+
 3. **git pull**
 
 git pull = git fetch + git merge
@@ -45,8 +55,8 @@ then you need only git push,that can succeed for sure! finished!!!
 `pull failed` : remote's update have clashes with local new modifies:
 								(i.e.:you and other modified the same file and can not merge)
 pull failed not equals that git do nothing,git have done this although failed:
-* git fetch origin/master (newest update of remote repo)
-* generate taged infomations in clashed file;
+> git fetch origin/master (newest update of remote repo)
+> generate taged infomations in clashed file;
 
 so you need to:
 
@@ -89,6 +99,7 @@ so you need to:
      ||                                          ||             
      \/                                          \/
 --------------------------------------------------------------------------------
+tig map:
 |                                           |                    |
 A  commit A                                 M-- Merge ci         M-- Merge ci
 O  init commit                              | B commit B         | B commit B
