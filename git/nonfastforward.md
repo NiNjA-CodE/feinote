@@ -14,9 +14,8 @@ It means:
 1. make a commit locally
 2. git push (OK / failed)
 3. git pull if push failed(non-fast-forward) (OK / failed)
-4. discuss if pull clashed, conclude a final resolution
-5. modify and make a considered commit
-6. git push (succeed)
+4. discuss if pull clashed, conclude a final commit resolution
+5. git push (succeed)
 
 ## typical senerioes
 
@@ -68,6 +67,7 @@ so you need to:
 
 ```
 
+--------------------------------------------------------------------------------
 --------------
 |git add     |
 |git commit  |
@@ -99,7 +99,7 @@ so you need to:
      ||                                          ||             
      \/                                          \/
 --------------------------------------------------------------------------------
-tig map:
+correspongding tig map:
 |                                           |                    |
 A  commit A                                 M-- Merge ci         M-- Merge ci
 O  init commit                              | B commit B         | B commit B
