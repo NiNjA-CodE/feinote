@@ -47,7 +47,9 @@ then you need only git push,that can succeed for sure! finished!!!
 pull failed not equals that git do nothing,git have done this although failed:
 * git fetch origin/master (newest update of remote repo)
 * generate taged infomations in clashed file;
+
 so you need to:
+
 4. **discuss the clashed file with mate staff**
 5. **conclude a finnal resolution,and make a commit ,then push(succes for sure!)**
 
