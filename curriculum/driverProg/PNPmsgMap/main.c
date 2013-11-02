@@ -6,7 +6,9 @@
 #include <unistd.h>
 
 #define MAXMSG 100
-#define SONAME "libfei.so"
+#define SONAME "./lib/libfei.so"
+
+//#define DEBUG
 
 /******************************************************************************
  *                               type definition                              *
@@ -25,6 +27,21 @@ struct stat curstat;
 struct MessageMapEntry MessageMap[MAXMSG];
 
 
+void
+noFunc() {
+				printf("Function name can't be found in ./lib/libfei.so!\n");
+}
+
+void
+MessageMapInit() {
+				int i;
+				MsgHandler buf = (MsgHandler) noFunc;
+				for (i=0;i<MAXMSG;i++) {
+								MessageMap[i].ch = 0;
+								MessageMap[i].handler = buf;
+				}
+}
+
 /*---------------------------------------------------------------------------*/
 /*                        seekFuncInSo()                                     */
 /*---------------------------------------------------------------------------*/
@@ -37,13 +54,16 @@ seekFuncInSo(const char* file,
 				void* handle = dlopen(file, mode);
 				MsgHandler gothandler = (MsgHandler) dlsym(handle, (char*)funcname);
 				if (NULL == gothandler) {
-								printf("no such function in the lib\n");
+								printf("Handler function %s is in file ./MsgMap.conf \n",(char *)funcname);
+								printf("But it is not implement in ./lib/libfei.so \n");
+								printf("Implement function and run ./demo.sh --lib before modify ./MsgMap.conf\n");
 								return 0;
+								dlclose(handle);
+								return (MsgHandler) noFunc;
 				}
 				dlclose(handle);
 				return gothandler;
 }
-
 
 /*---------------------------------------------------------------------------*/
 /*                             readTuple()                                   */
@@ -59,18 +79,24 @@ seekFuncInSo(const char* file,
  * @return  0=end of file; 1=not end of file
  */
 
-int readTuple(FILE* file, char* Msg, char* name) {
+int readTuple(FILE* file, char* Msg, char* name) { 
+
+
 			char buf[60];
-			fgets(buf, 60, file);
-			if (sscanf(buf, "%c %s", Msg, name) < 0) {
+		 	if(fgets(buf, 60, file) == NULL)
 							return 0;
+			if (sscanf(buf, "%c %s", Msg, name) < 0) {
+							printf("read error!\n");
 			}
-			
-			return 0;
+
+//#ifdef DEBUG
+			printf("DEBUG: message:%c handlername: %s\n",*Msg, name);
+//#endif
+			return 1;
 }
 
 /******************************************************************************
- *                            conf2MsgMap()                                     *
+ *                            conf2MsgMap()                                   *
  *****************************************************************************/
 
 void
@@ -101,18 +127,28 @@ conf2MsgMap() {
 	FILE* openedconf = fopen("./MsgMap.conf","r");
 
 	/* set global MsgMap Table */
-	while ((readFlag = readTuple(openedconf, &gotMsg, gotName)) && i<MAXMSG) {
+	while (readFlag && i<MAXMSG) {
+				readFlag = readTuple(openedconf, &gotMsg, gotName);
+#ifdef DEBUG
+					printf("DEBUG: read one tuple \n");
+#endif
+					if (gotMsg == 0) break;
 				MessageMap[i].ch = gotMsg;
-				MessageMap[i].handler = seekFuncInSo(SONAME, (void*)gotName, RTLD_LAZY);
+				MessageMap[i].handler = seekFuncInSo(SONAME, (void*)gotName, RTLD_NOW);
 				i++;
 	};
 
 	if (readFlag) {
 				printf("exceed max message limit\n");
 	} else if (!readFlag) {
-				MessageMap[i].ch = '0';
+				MessageMap[i].ch = 0;
 				MessageMap[i].handler = NULL;
 	}
+	
+	fclose(openedconf);
+#ifdef DEBUG
+	printf("DEBUG: conf2MsgMap excute! refresh MessageMap \n");
+#endif
 
 }
 
@@ -122,7 +158,14 @@ conf2MsgMap() {
  *****************************************************************************/
 
 void threadProc() {
+#ifdef DEBUG
+	printf("DEBUG: thread starting manage dynamic lib!\n");
+#endif
+
 				while(1) {
+#ifdef DEBUG
+	printf("DEBUG: checking MsgMap.conf stat \n");
+#endif
 								stat("./MsgMap.conf", &curstat);
 								if (curstat.st_mtime != statbuf.st_mtime) {
 												statbuf = curstat;
@@ -144,16 +187,21 @@ int main() {
 				pthread_t id;
 				char ch;
 
+				MessageMapInit();
+
 				stat("./MsgMap.conf", &statbuf);
 				/* create thread to manage dynamic lib and check conf file update */
+				conf2MsgMap();
 				pthread_create(&id, NULL, (void *)threadProc, NULL);
 
 				/* main process to handle user request */
 				/* wait for source config file complete! */
+
 				printf("Press a Key: \n");
 				while((ch=getchar())!='x') {
 						int i = 0;
 						while(MessageMap[i].ch) {
+//										printf("%c\n",MessageMap[i].ch);
 										if (MessageMap[i].ch == ch) {
 														MessageMap[i].handler();
 														break;

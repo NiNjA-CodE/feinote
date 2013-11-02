@@ -16,10 +16,10 @@ LIB="${SRC}/lib"
 
 [[ $# -eq 1 ]] || {
 echo 'Input commands like below:'
-echo '  * "demo.sh main"   :compile main.c to ./appMain'
-echo '  * "demo.sh lib"    :compile src file under ./lib folder to ./lib/libfei.so'
-echo '  * "demo.sh clean"  :delete all generated ELF files'
-echo '  * "demo.sh doc"    :check documentation'
+echo '  * "./demo.sh --main"   :compile main.c to ./appMain'
+echo '  * "./demo.sh --lib"    :compile src file under ./lib folder to ./lib/libfei.so'
+echo '  * "./demo.sh --clean"  :delete all generated ELF files'
+echo '  * "./demo.sh --doc"    :check documentation'
 }
 
 
@@ -42,6 +42,9 @@ function clean() {
 function doc() {
 	firefox 
 }
+
+
+################################################################################
 
 case $1 in
 	"--main")
