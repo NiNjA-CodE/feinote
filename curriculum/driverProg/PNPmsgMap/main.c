@@ -8,7 +8,7 @@
 #define MAXMSG 100
 #define SONAME "./lib/libfei.so"
 
-//#define DEBUG
+#define DEBUG
 
 /******************************************************************************
  *                               type definition                              *
@@ -35,10 +35,9 @@ noFunc() {
 void
 MessageMapInit() {
 				int i;
-				MsgHandler buf = (MsgHandler) noFunc;
 				for (i=0;i<MAXMSG;i++) {
 								MessageMap[i].ch = 0;
-								MessageMap[i].handler = buf;
+								MessageMap[i].handler = NULL;
 				}
 }
 
@@ -46,23 +45,23 @@ MessageMapInit() {
 /*                        seekFuncInSo()                                     */
 /*---------------------------------------------------------------------------*/
 MsgHandler
-seekFuncInSo(const char* file,
-								void* funcname,
-								int mode
+seekFuncInSo(void* handle,
+								void* funcname
 ) {
 				/* TODO: everytime check handler address will load lib,low efficiency */
-				void* handle = dlopen(file, mode);
+				//void* handle = dlopen(file, mode);
 				MsgHandler gothandler = (MsgHandler) dlsym(handle, (char*)funcname);
 				if (NULL == gothandler) {
 								printf("Handler function %s is in file ./MsgMap.conf \n",(char *)funcname);
 								printf("But it is not implement in ./lib/libfei.so \n");
 								printf("Implement function and run ./demo.sh --lib before modify ./MsgMap.conf\n");
-								return 0;
-								dlclose(handle);
-								return (MsgHandler) noFunc;
-				}
-				dlclose(handle);
+								//dlclose(handle);
+								//return (MsgHandler)noFunc;
+								return NULL;
+				} 
+				//dlclose(handle);
 				return gothandler;
+				
 }
 
 /*---------------------------------------------------------------------------*/
@@ -100,7 +99,7 @@ int readTuple(FILE* file, char* Msg, char* name) {
  *****************************************************************************/
 
 void
-conf2MsgMap() {
+conf2MsgMap(void* handle) {
 
 	/**
 	 * headmarks
@@ -120,7 +119,7 @@ conf2MsgMap() {
  	 * readFlag = 0 : end of file
  	 * readFlag = 1 : not end of file
  	 */
-	int readFlag;
+	int readFlag=1;
 	int i = 0;
 
 	/* open configure file */
@@ -132,9 +131,8 @@ conf2MsgMap() {
 #ifdef DEBUG
 					printf("DEBUG: read one tuple \n");
 #endif
-					if (gotMsg == 0) break;
 				MessageMap[i].ch = gotMsg;
-				MessageMap[i].handler = seekFuncInSo(SONAME, (void*)gotName, RTLD_NOW);
+				MessageMap[i].handler = seekFuncInSo(handle, (void*)gotName);
 				i++;
 	};
 
@@ -157,7 +155,7 @@ conf2MsgMap() {
  *                             threadProc()                                  *
  *****************************************************************************/
 
-void threadProc() {
+void threadProc(void* handle) {
 #ifdef DEBUG
 	printf("DEBUG: thread starting manage dynamic lib!\n");
 #endif
@@ -169,7 +167,9 @@ void threadProc() {
 								stat("./MsgMap.conf", &curstat);
 								if (curstat.st_mtime != statbuf.st_mtime) {
 												statbuf = curstat;
-												conf2MsgMap();
+												dlclose(handle);
+												handle = dlopen(SONAME, RTLD_NOW);
+												conf2MsgMap(handle);
 								}
 				sleep(5);
 				}
@@ -188,27 +188,32 @@ int main() {
 				char ch;
 
 				MessageMapInit();
+				void* handle = dlopen(SONAME, RTLD_NOW);
 
+				conf2MsgMap(handle);
 				stat("./MsgMap.conf", &statbuf);
 				/* create thread to manage dynamic lib and check conf file update */
-				conf2MsgMap();
-				pthread_create(&id, NULL, (void *)threadProc, NULL);
+				pthread_create(&id, NULL, (void *)threadProc, handle);
 
 				/* main process to handle user request */
 				/* wait for source config file complete! */
 
 				printf("Press a Key: \n");
 				while((ch=getchar())!='x') {
-						int i = 0;
-						while(MessageMap[i].ch) {
+						int i;
+						int flag = 0;
+						for(i=0;(MessageMap[i].ch != 0) && (i < MAXMSG);i++) {
 //										printf("%c\n",MessageMap[i].ch);
 										if (MessageMap[i].ch == ch) {
 														MessageMap[i].handler();
+														flag =1;
 														break;
-										}
-										i++;
+									 	}
 						}
-				};
+						if(!flag) {
+										printf("no such message in MsgMap.conf\n");
+						}
+				}
 				pthread_join(id, NULL);
 				return 0;
 }
