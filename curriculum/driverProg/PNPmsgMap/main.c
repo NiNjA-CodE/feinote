@@ -6,6 +6,7 @@
 #include <unistd.h>
 
 #define MAXMSG 100
+#define SONAME "libfei.so"
 
 /******************************************************************************
  *                               type definition                              *
@@ -32,7 +33,7 @@ seekFuncInSo(const char* file,
 								void* funcname,
 								int mode
 ) {
-				/* TODO: everytime check handler address will load lib, low efficient */
+				/* TODO: everytime check handler address will load lib,low efficiency */
 				void* handle = dlopen(file, mode);
 				MsgHandler gothandler = (MsgHandler) dlsym(handle, (char*)funcname);
 				if (NULL == gothandler) {
@@ -102,7 +103,7 @@ conf2MsgMap() {
 	/* set global MsgMap Table */
 	while ((readFlag = readTuple(openedconf, &gotMsg, gotName)) && i<MAXMSG) {
 				MessageMap[i].ch = gotMsg;
-				MessageMap[i].handler = seekFuncInSo("mysofilepath", (void*)gotName, RTLD_LAZY);
+				MessageMap[i].handler = seekFuncInSo(SONAME, (void*)gotName, RTLD_LAZY);
 				i++;
 	};
 
