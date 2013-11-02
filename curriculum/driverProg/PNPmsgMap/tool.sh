@@ -40,7 +40,7 @@ function clean() {
 }
 
 function doc() {
-	firefox 
+	firefox https://github.com/Universefei/feinote/blob/master/curriculum/driverProg/PNPmsgMap/README.md
 }
 
 
