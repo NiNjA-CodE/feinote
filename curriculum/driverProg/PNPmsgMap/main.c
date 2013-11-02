@@ -54,10 +54,10 @@ seekFuncInSo(void* handle,
 				if (NULL == gothandler) {
 								printf("Handler function %s is in file ./MsgMap.conf \n",(char *)funcname);
 								printf("But it is not implement in ./lib/libfei.so \n");
-								printf("Implement function and run ./demo.sh --lib before modify ./MsgMap.conf\n");
+								printf("Make sure function implemented and run ./demo.sh --lib before modify ./MsgMap.conf\n");
 								//dlclose(handle);
-								//return (MsgHandler)noFunc;
-								return NULL;
+								return (MsgHandler)noFunc;
+								//return NULL;
 				} 
 				//dlclose(handle);
 				return gothandler;
@@ -126,23 +126,25 @@ conf2MsgMap(void* handle) {
 	FILE* openedconf = fopen("./MsgMap.conf","r");
 
 	/* set global MsgMap Table */
-	while (readFlag && i<MAXMSG) {
+	while (i<MAXMSG) {
 				readFlag = readTuple(openedconf, &gotMsg, gotName);
+				if(readFlag !=0) {
 #ifdef DEBUG
 					printf("DEBUG: read one tuple \n");
 #endif
 				MessageMap[i].ch = gotMsg;
 				MessageMap[i].handler = seekFuncInSo(handle, (void*)gotName);
 				i++;
+				} else {
+								break;
+				}
+
 	};
 
 	if (readFlag) {
 				printf("exceed max message limit\n");
-	} else if (!readFlag) {
-				MessageMap[i].ch = 0;
-				MessageMap[i].handler = NULL;
-	}
-	
+	} 
+
 	fclose(openedconf);
 #ifdef DEBUG
 	printf("DEBUG: conf2MsgMap excute! refresh MessageMap \n");
@@ -197,13 +199,13 @@ int main() {
 
 				/* main process to handle user request */
 				/* wait for source config file complete! */
-
 				printf("Press a Key: \n");
-				while((ch=getchar())!='x') {
+				while(scanf("%c",&ch)&&ch!='x') {
 						int i;
 						int flag = 0;
+
+						if(ch == '\n') continue;
 						for(i=0;(MessageMap[i].ch != 0) && (i < MAXMSG);i++) {
-//										printf("%c\n",MessageMap[i].ch);
 										if (MessageMap[i].ch == ch) {
 														MessageMap[i].handler();
 														flag =1;
