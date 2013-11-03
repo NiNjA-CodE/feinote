@@ -3,5 +3,5 @@
 
 void
 fD() {
-	printf("!!!!!!!!!!!!!!feilunzhouHey! What's up? I'm fD.\n");
+	printf("Hey! What's up? I'm fD.\n");
 }
