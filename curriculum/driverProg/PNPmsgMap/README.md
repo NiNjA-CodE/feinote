@@ -35,16 +35,17 @@ PNPmsgMap
 
 ### 2. add fE
 
-![addfe.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/PNPmsgMap/misc/add%20fF.png)
+![addfe.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/PNPmsgMap/misc/add%20fe.png)
 
 ### 3. run fE after adding fE
 
 ![runafteraddingfe.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/PNPmsgMap/misc/run%20after%20adding%20fe.png)
 
 ### 4. add fF
-![addff.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/PNPmsgMap/misc/add%20fe.png)
+
+![addff.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/PNPmsgMap/misc/add%20fF.png)
 
 ### 5 run fF after adding it
 
-![runff.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/PNPmsgMap/misc/add%20fF.png)
+![runff.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/PNPmsgMap/misc/run%20demo%20snapshot%20after%20adding%20fF.png)
 
