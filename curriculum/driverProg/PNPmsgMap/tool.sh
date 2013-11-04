@@ -33,6 +33,7 @@ function compile_main() {
 function compile_lib() {
 	libfiles=`ls ${LIB}/*.c`
 	gcc ${libfiles} -shared -fPIC -o ${LIB}/libfei.so 
+	touch ${SRC}/MsgMap.conf
 }
 
 function clean() {

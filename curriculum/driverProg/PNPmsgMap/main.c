@@ -199,12 +199,14 @@ main() {
 
 	conf2MsgMap(handle);
 	stat("./MsgMap.conf", &statbuf);
+
 	/* create thread to manage dynamic lib and check conf file update */
 	pthread_create(&id, NULL, (void *)threadProc, handle);
 
 	/* main process to handle user request */
 	/* wait for source config file complete! */
 	printf("Press a Key: \n");
+
 	while(scanf("%c",&ch)&&ch!='x') {
 		int i;
 		int flag = 0;
