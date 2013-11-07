@@ -11,6 +11,7 @@ CMake
 ## Resources
 
 - [Wikipedia](http://zh.wikibooks.org/zh-cn/CMake_%E5%85%A5%E9%96%80)
+- [podofomomo example](https://github.com/Universefei/podofomemo/blob/master/podofo/CMakeLists.txt)
 
 ## Tips for CMake
 
@@ -40,6 +41,7 @@ CMake
 - list()
 - string()
 - find_package()
+- include()
 - include_directories()
 - add_subdirectory()
 - add_library()
