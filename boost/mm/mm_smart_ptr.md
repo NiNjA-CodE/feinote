@@ -1,7 +1,7 @@
 smart_ptr
 =========
 
-- std::auto_ptr
+- std::auto_ptr (C++98 standard)
 - boost::scoped_ptr
 - boost::scoped_array
 - boost::shared_ptr
