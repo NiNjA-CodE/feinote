@@ -16,7 +16,7 @@ Pool 库包括四个组成部分：
 
 ## pool
 
-```
+```c++
 template <typename UserAllocator = ... >
 class pool {
 	public:
@@ -41,7 +41,7 @@ class pool {
 
 ## object_pool
 
-```
+```c++
 template <typename ElementType>
 class object_pool: protected pool {
 	public:
@@ -57,9 +57,9 @@ class object_pool: protected pool {
 };
 ```
 
-## gingleton_pool
+## singleton_pool
 
-```
+```c++
 template <typename Tag, nusigned RequestedSize>
 class Singleton_pool {
 	public:
