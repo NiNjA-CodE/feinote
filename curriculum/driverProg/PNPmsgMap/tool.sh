@@ -1,30 +1,17 @@
 #!/usr/bin/env bash
 
-# demo.sh : makefile-like function shell script
+# tool.sh : makefile-like function shell script
 
-###############################################################################
-# set global variables
+# =============================================================================
+# Set global variables
+# =============================================================================
 
 SRC=`pwd`
 LIB="${SRC}/lib"
 
-
-###############################################################################
-# prompt infoes
-
-[[ $# -ge 2 ]] && echo 'Too many parameters '
-
-[[ $# -eq 1 ]] || {
-echo 'Input commands like below:'
-echo '  * "./tool.sh --doc"    :check documentation'
-echo '  * "./tool.sh --lib"    :compile src file under ./lib folder to ./lib/libfei.so'
-echo '  * "./tool.sh --main"   :compile main.c to ./appMain'
-echo '  * "./tool.sh --clean"  :delete all generated ELF files'
-}
-
-
-###############################################################################
-# functions
+# =============================================================================
+# Functions
+# =============================================================================
 
 function compile_main() {
 	gcc -o appMain ${SRC}/main.c -lpthread -ldl
@@ -44,8 +31,20 @@ function doc() {
 	firefox https://github.com/Universefei/feinote/blob/master/curriculum/driverProg/PNPmsgMap/README.md
 }
 
+function promt() {
+		echo 'Input commands like below:'
+		echo '=========================='
+		echo './tool.sh --doc    :check documentation'
+		echo './tool.sh --lib    :compile files in ./lib folder to ./lib/libfei.so'
+		echo './tool.sh --main   :compile main.c to ./appMain'
+		echo './tool.sh --clean  :delete all generated ELF files'
+}
+	
+# =============================================================================
+# Logical
+# =============================================================================
 
-################################################################################
+[[ $# -ge 2 ]] && echo 'Too many parameters '
 
 case $1 in
 	"--main")
@@ -61,6 +60,8 @@ case $1 in
 		doc
 		;;
 	*)
-		echo "Input ERROR!"
+		prompt
+		;;
 esac
+
 
