@@ -1,6 +1,6 @@
-#include "stdlib.h"
+#include <stdlib.h>
 #include <string.h>
-#include "stdio.h"
+#include <stdio.h>
 
 #define BUFSZ 50
 /*---------------------------------------------------------------------------*/
@@ -65,6 +65,7 @@ writebmp(char *pathname,unsigned char *YBuffer,
 	/* write header */
 	fwrite(header,sizeof(char),54,fp);
 
+	/* store YUV infos */
     fwrite(YBuffer, sizeof(char), 768*1024, fp);
 	fwrite(VBuffer, sizeof(char), 768*1024/2, fp);
 	fwrite(UBuffer, sizeof(char), 768*1024/2, fp);
@@ -74,7 +75,7 @@ writebmp(char *pathname,unsigned char *YBuffer,
 }
 
 /*---------------------------------------------------------------------------*/
-/*                             rgb2yuv()                                */
+/*                                  rgb2yuv()                                */
 /*---------------------------------------------------------------------------*/
 
 /* convert RGB to YUV */
@@ -93,7 +94,7 @@ rgb2yuv(unsigned char *bmpBuf)
     UBuffer = (unsigned char * ) malloc(768*1024/2);
     VBuffer = (unsigned char * ) malloc(768*1024/2);
 	if (YBuffer != NULL && UBuffer != NULL && VBuffer != NULL) {
-			printf("memory heap allocate succuess!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+			printf("memory heap allocate succuess!\n");
 	}
 
     //Define some working variables and arrays
@@ -169,8 +170,8 @@ rgb2yuv(unsigned char *bmpBuf)
 /*---------------------------------------------------------------------------*/
 
 int 
-main(int argc, char * argv[]) {
-
+main(int argc, char * argv[]) 
+{
 	char readpath[BUFSZ];
 	char writepath[BUFSZ];
 
