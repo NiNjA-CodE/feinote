@@ -1,10 +1,11 @@
+/* why those is before following #includes ? */
 #ifndef CODE_HPP
 #define CODE_HPP
 
-#include <map>
-#include <queue>
-#include <fstream>
-#include <cstdint>
+#include <map>     // STL map
+#include <queue>   // STL queue
+#include <fstream> // for class ifstream, ofstream, fstream
+#include <cstdint> // ?
 
 #include "node.hpp"
 #include "tree.hpp"
@@ -15,6 +16,7 @@ class compress
       compress(std::string infile_);
       ~compress();
 
+	  /* Why do not design output file as a data member of class? */
       void write(std::string outfile_);
 
 

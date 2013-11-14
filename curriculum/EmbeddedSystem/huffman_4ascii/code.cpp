@@ -19,6 +19,13 @@ void
 search(node *r, const char c, bool &found, std::string &plaincode);
 
 /*----- constructor ----------------------------------------------------------*/
+
+/* When have opened file?
+ * ======================
+ * after invoking ":infile(infile_)",ifstream constructor will be triggered,
+ * class ifstream will construct instance infile with param infile_, implicitly
+ * doing open file action in ifstream construct process.
+ */
 compress::compress(std::string infile_): infile(infile_)
 {
    if (!(infile.is_open())) {
@@ -28,6 +35,7 @@ compress::compress(std::string infile_): infile(infile_)
 
 /*----- destructor ----------------------------------------------------------*/
 compress::~compress() {
+   /* ifstream::close() */
    infile.close();
 }
 
@@ -35,19 +43,27 @@ compress::~compress() {
 void 
 compress::write(std::string outfile_)
 {
+   /* open file while class construction process */
    std::ofstream outfile(outfile_, std::ios::binary | std::ios::trunc);
-   if (!(outfile.is_open()))
+
+   if (!(outfile.is_open())) {
        throw std::runtime_error("Error opening file\n");
+   }
 
    //  create a histogram
    std::string plaintext;
+
+   /**
+    * getline will stop when encounted end_of_line character, and omitted
+	* end_of_line charater, then return 0, loop terminated!
+    */
    for (std::string line; std::getline(infile, line); ) {
       line += '\n';
       for (unsigned i = 0; i<=line.size(); histog[line[i++]]++);
       plaintext += line;
    }
 
-
+   /* use histog map to construct instance of class tree */
    tree hcode(histog);
    std::string plaincode = generate_code(plaintext, hcode);
 
@@ -56,7 +72,9 @@ compress::write(std::string outfile_)
    outfile.write(reinterpret_cast<char*>(&streamOffset), 2);
 
    //  write chars and their weights into the binary file
+   //  Haha, super awesome auto!!!
    for (auto it = histog.begin(); it != histog.end(); ++it) {
+	  /* what's different between ofstream::put() and ofstream::write() */
       outfile.put(it->first);
       outfile.write(reinterpret_cast<char*>(&(it->second)), sizeof(int));
    }
@@ -71,6 +89,7 @@ compress::write(std::string outfile_)
 
    for (; !(pcode.empty()); pcode = pcode.substr(8)) {
       unsigned char byte = 0;
+	  /* align bits to byte */
       for (int j=0; j<8; ++j) {
          if (pcode.at(j) == '1')
             byte |= 0x01;
@@ -78,8 +97,10 @@ compress::write(std::string outfile_)
             byte &= ~(0x01);
          if (j < 7) byte<<=1;
       }
+
       outfile.put(byte);
    }
+
    outfile.close();
 }
 
@@ -138,6 +159,7 @@ search(node *r, const char c, bool &found, std::string &plaincode)
 
 
 /*----- constructor ----------------------------------------------------------*/
+
 decompress::decompress(std::string file_): file(file_, std::ios::binary)
 {
    if (!(file.is_open()))

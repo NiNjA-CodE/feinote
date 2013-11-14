@@ -1,6 +1,5 @@
 # Huffman - compression
 
-original:[here](https://github.com/PrototypePHX/huffman)
 
 ## Install
 simply invoke make
