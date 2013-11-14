@@ -52,6 +52,7 @@ struct branch: public node
 {
       virtual nodetype type() const;
 
+	  /* This actually is implementation, not just decalaration */
       branch(node *left_, node *right_): node(left_, right_) {}
 
 };
@@ -59,7 +60,8 @@ struct branch: public node
 /*----- leaf node -----------------------------------------------------------*/
 struct leaf: public node
 {
-      char payload;
+	  /* ? */
+      char payload; /* value? */
 
       virtual nodetype type() const;
 
