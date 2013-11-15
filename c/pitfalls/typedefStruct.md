@@ -3,10 +3,9 @@ typedef Struct
 
 There 2 ways to define a struct:
 
-### 1
+### 1 struct foo {}
 
-define:
-=======
+**define:**
 ```
 struct node {
 	int weight;
@@ -14,15 +13,14 @@ struct node {
 };
 ```
 
-invoke struct to declare variable:
-==================================
+**invoke struct to declare variable:**
 ```
 struct node var1, var2;
 ```
 
-### 2
-define:
-=======
+### 2 typedef struct foo {} bar
+
+**define:**
 ```
 typedef struct node {
 	int weight;
@@ -44,8 +42,7 @@ typedef struct {
 } Node;
 ```
 
-invoke struct to declare variable:
-==================================
+**invoke struct to declare variable:**
 ```
 struct node var1, var2;
 ```
@@ -54,7 +51,8 @@ OR
 Node var1, var2;
 ```
 
-## Wrap-up
+Wrap-up
+=======
 
 ```
 typedef struct foo {} bar
@@ -84,18 +82,5 @@ bar var;
 ```
 struct foo var;
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
