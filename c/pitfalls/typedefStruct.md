@@ -3,7 +3,7 @@ typedef Struct
 
 There 2 ways to define a struct:
 
-### 1 struct foo {}
+## 1 struct foo {}
 
 **define:**
 ```
@@ -18,7 +18,7 @@ struct node {
 struct node var1, var2;
 ```
 
-### 2 typedef struct foo {} bar
+## 2 typedef struct foo {} bar
 
 **define:**
 ```
@@ -70,17 +70,11 @@ so `typedef struct foo {} bar` do one more statement than `struct foo {}`
 *   so the former is more functional:
 it can declara var via 2 approaches:
 
-```
-struct foo var;
-```
+`struct foo var;`
 OR
-```
-bar var;
-```
+`bar var;`
 
 *   while the latter can just declare variable like:
-```
-struct foo var;
-```
+`struct foo var;`
 
 
