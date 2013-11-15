@@ -54,9 +54,7 @@ Node var1, var2;
 Wrap-up
 =======
 
-```
-typedef struct foo {} bar
-```
+`typedef struct foo {} bar`
 is just a typedef warp-up for `struct foo {}` clause
 
 It is equal to
@@ -67,14 +65,13 @@ typedef foo bar;
 
 so `typedef struct foo {} bar` do one more statement than `struct foo {}`
 
-*   so the former is more functional:
+* so the former is more functional:
 it can declara var via 2 approaches:
 
 `struct foo var;`
 OR
 `bar var;`
 
-*   while the latter can just declare variable like:
+* while the latter can just declare variable like:
 `struct foo var;`
-
 
