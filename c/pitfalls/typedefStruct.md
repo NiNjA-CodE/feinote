@@ -67,7 +67,7 @@ typedef foo bar;
 
 so `typedef struct foo {} bar` do one more statement than `struct foo {}`
 
-1.  so the former is more functional:
+*   so the former is more functional:
 it can declara var via 2 approaches:
 
 ```
@@ -78,7 +78,7 @@ OR
 bar var;
 ```
 
-2.  while the latter can just declare variable like:
+*   while the latter can just declare variable like:
 ```
 struct foo var;
 ```
