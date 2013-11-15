@@ -6,7 +6,7 @@ There 2 ways to define a struct:
 ### 1
 
 define:
-\=======
+=======
 ```
 struct node {
 	int weight;
@@ -15,29 +15,29 @@ struct node {
 ```
 
 invoke struct to declare variable:
-\==================================
+==================================
 ```
 struct node var1, var2;
 ```
 
 ### 2
 define:
-\=======
+=======
 ```
 typedef struct node {
 	int weight;
 	struct node *parent, *lch, *rch;
 } Node;
-
+```
 OR
-
+```
 typedef struct node {
 	int weight;
 	Node *parent, *lch, *rch;
 } Node;
-	
+```
 OR
-
+```
 typedef struct {
 	int weight;
 	Node *parent, *lch, *rch;
@@ -45,12 +45,12 @@ typedef struct {
 ```
 
 invoke struct to declare variable:
-\==================================
+==================================
 ```
 struct node var1, var2;
-
+```
 OR
-
+```
 Node var1, var2;
 ```
 
@@ -67,19 +67,23 @@ struct foo {};
 typedef foo bar;
 ```
 
-so `typedef struct foo {} bar` do one more statement than `struct foo {}`, so
-the former is more functional:
+so `typedef struct foo {} bar` do one more statement than `struct foo {}`
+
+1.  so the former is more functional:
 it can declara var via 2 approaches:
 
-`struct foo var;`
-
+```
+struct foo var;
+```
 OR
+```
+bar var;
+```
 
-`bar var;`
-
-while the latter can just declare variable like:
-
-`struct foo var;`
+2.  while the latter can just declare variable like:
+```
+struct foo var;
+```
 
 
 
