@@ -1,208 +1,97 @@
  stdio--------------------------------readLen = 1 Byte
 the number of unsigned char 0 : 1048576000
 
-real	0m41.573s
-user	0m41.267s
-sys	0m0.164s
-the number of unsigned char 0 : 1048576000
-
-real	0m41.033s
-user	0m40.647s
-sys	0m0.228s
-the number of unsigned char 0 : 1048576000
-
-real	0m40.208s
-user	0m39.878s
-sys	0m0.192s
- stdio--------------------------------readLen = 2 Byte
-the number of unsigned char 0 : 1048576000
-
-real	0m23.038s
-user	0m22.781s
-sys	0m0.176s
-the number of unsigned char 0 : 1048576000
-
-real	0m23.099s
-user	0m22.817s
-sys	0m0.200s
-the number of unsigned char 0 : 1048576000
-
-real	0m22.877s
-user	0m22.605s
-sys	0m0.196s
- stdio--------------------------------readLen = 4 Byte
-the number of unsigned char 0 : 1048576000
-
-real	0m11.622s
-user	0m11.385s
-sys	0m0.196s
-the number of unsigned char 0 : 1048576000
-
-real	0m11.589s
-user	0m11.305s
+real	0m41.129s
+user	0m40.863s
 sys	0m0.244s
 the number of unsigned char 0 : 1048576000
 
-real	0m11.575s
-user	0m11.361s
-sys	0m0.172s
- stdio--------------------------------readLen = 8 Byte
+real	0m40.396s
+user	0m40.167s
+sys	0m0.204s
 the number of unsigned char 0 : 1048576000
 
-real	0m6.783s
-user	0m6.568s
-sys	0m0.188s
+real	0m42.277s
+user	0m42.031s
+sys	0m0.208s
+ stdio--------------------------------readLen = 2 Byte
 the number of unsigned char 0 : 1048576000
 
-real	0m6.769s
-user	0m6.552s
-sys	0m0.184s
+real	0m23.118s
+user	0m22.965s
+sys	0m0.124s
 the number of unsigned char 0 : 1048576000
 
-real	0m6.771s
-user	0m6.552s
-sys	0m0.192s
- stdio--------------------------------readLen = 16 Byte
+real	0m23.147s
+user	0m22.913s
+sys	0m0.176s
 the number of unsigned char 0 : 1048576000
 
-real	0m4.491s
-user	0m4.256s
-sys	0m0.216s
+real	0m23.007s
+user	0m22.861s
+sys	0m0.140s
+ stdio--------------------------------readLen = 4 Byte
 the number of unsigned char 0 : 1048576000
 
-real	0m4.476s
-user	0m4.232s
-sys	0m0.228s
-the number of unsigned char 0 : 1048576000
-
-real	0m4.506s
-user	0m4.288s
-sys	0m0.200s
- stdio--------------------------------readLen = 32 Byte
-the number of unsigned char 0 : 1048576000
-
-real	0m3.299s
-user	0m3.084s
-sys	0m0.200s
-the number of unsigned char 0 : 1048576000
-
-real	0m3.288s
-user	0m3.080s
-sys	0m0.196s
-the number of unsigned char 0 : 1048576000
-
-real	0m3.289s
-user	0m3.080s
-sys	0m0.196s
- stdio--------------------------------readLen = 64 Byte
-the number of unsigned char 0 : 1048576000
-
-real	0m3.013s
-user	0m2.804s
-sys	0m0.196s
-the number of unsigned char 0 : 1048576000
-
-real	0m3.036s
-user	0m2.792s
-sys	0m0.232s
-the number of unsigned char 0 : 1048576000
-
-real	0m3.023s
-user	0m2.816s
-sys	0m0.192s
- stdio--------------------------------readLen = 128 Byte
-the number of unsigned char 0 : 1048576000
-
-real	0m2.643s
-user	0m2.472s
-sys	0m0.160s
-the number of unsigned char 0 : 1048576000
-
-real	0m2.652s
-user	0m2.468s
-sys	0m0.164s
-the number of unsigned char 0 : 1048576000
-
-real	0m2.643s
-user	0m2.452s
-sys	0m0.180s
- stdio--------------------------------readLen = 512 Byte
-the number of unsigned char 0 : 1048576000
-
-real	0m2.316s
-user	0m2.116s
-sys	0m0.188s
-the number of unsigned char 0 : 1048576000
-
-real	0m2.336s
-user	0m2.112s
+real	0m11.603s
+user	0m11.385s
 sys	0m0.212s
 the number of unsigned char 0 : 1048576000
 
-real	0m2.344s
-user	0m2.156s
-sys	0m0.176s
- stdio--------------------------------readLen = 1024 Byte
+real	0m11.606s
+user	0m11.393s
+sys	0m0.196s
 the number of unsigned char 0 : 1048576000
 
-real	0m2.272s
-user	0m2.072s
-sys	0m0.188s
+real	0m11.639s
+user	0m11.433s
+sys	0m0.200s
+ stdio--------------------------------readLen = 8 Byte
 the number of unsigned char 0 : 1048576000
 
-real	0m2.286s
-user	0m2.100s
-sys	0m0.176s
+real	0m6.808s
+user	0m6.584s
+sys	0m0.204s
 the number of unsigned char 0 : 1048576000
 
-real	0m2.280s
-user	0m2.128s
-sys	0m0.140s
- stdio--------------------------------readLen = 2048 Byte
+real	0m6.852s
+user	0m6.596s
+sys	0m0.252s
 the number of unsigned char 0 : 1048576000
 
-real	0m2.230s
-user	0m2.056s
-sys	0m0.164s
+real	0m6.865s
+user	0m6.640s
+sys	0m0.212s
+ stdio--------------------------------readLen = 16 Byte
 the number of unsigned char 0 : 1048576000
 
-real	0m2.245s
-user	0m1.920s
-sys	0m0.316s
+real	0m4.566s
+user	0m4.360s
+sys	0m0.192s
 the number of unsigned char 0 : 1048576000
 
-real	0m2.254s
-user	0m2.060s
-sys	0m0.184s
- stdio--------------------------------readLen = 4096 Byte
-the number of unsigned char 0 : 1048576000
-
-real	0m2.250s
-user	0m2.060s
+real	0m4.583s
+user	0m4.400s
 sys	0m0.180s
 the number of unsigned char 0 : 1048576000
 
-real	0m2.230s
-user	0m2.012s
-sys	0m0.208s
+real	0m4.530s
+user	0m4.320s
+sys	0m0.196s
+ stdio--------------------------------readLen = 32 Byte
 the number of unsigned char 0 : 1048576000
 
-real	0m2.246s
-user	0m2.012s
-sys	0m0.228s
- mmap----------------------------------------------------
+real	0m3.303s
+user	0m3.136s
+sys	0m0.164s
 the number of unsigned char 0 : 1048576000
 
-real	0m2.673s
-user	0m2.456s
-sys	0m0.204s
+real	0m3.312s
+user	0m3.120s
+sys	0m0.180s
 the number of unsigned char 0 : 1048576000
 
-real	0m2.674s
-user	0m2.460s
-sys	0m0.204s
-the number of unsigned char 0 : 1048576000
-
-real	0m2.683s
-user	0m2.532s
-sys	0m0.128s
+real	0m3.351s
+user	0m3.196s
+sys	0m0.152s
+ stdio--------------------------------readLen = 64 Byte
