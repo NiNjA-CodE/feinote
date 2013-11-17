@@ -1,12 +1,11 @@
 StandardIO VS. mmap
 ====================
 
-### Problem description
 
+### Problem description
 ![problem](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/shm/figure/problem.png)
 
 ### SRC hierarchy
-
 ```
 .
 ├── figure/            (misc)
@@ -16,38 +15,41 @@ StandardIO VS. mmap
 ├── stdio.c            (source file of readming bigfile via standard io)
 ├── testReport         (statistic data result of testing)
 └── tools.sh*          (tools to compile/ run test etc.)
-
 ```
+
 ### tools.sh specification
-
-![tools.sh]()
-
+![tools.sh](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/shm/figure/tools.sh.png)
+**NOTE:**
+* `./tools.sh -d` 查看文档
+* `./tools.sh -b` 创建大文件 1M X 1000，名称为bigfile
+* `./tools.sh -c` 编译代码
+* `./tools.sh -t` 进行测试，测试结果数据保存在生成的testReport文件中了
 
 ### Note board
+由于一次结果具有偶然性，每组实验进行三次测试.
+
 
 
 ## DEMO
 
-1. create bigfile
-2. compile source code file
+### 1. create bigfile
 
+### 2. compile source code file
 ![toolsUsage](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/shm/figure/toolsUsage.png)
 
-3. test
-
+### 3. test
 ![test](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/shm/figure/testResult.png)
+
 
 
 ## Analysis & Conclusion
 
 ### 1.标准IO过程
-
 1. 数据从外存到内核缓冲区
 2. 数据从内核缓冲区拷贝到用户空间
 3. 用户程序在用户空间读写访问数据
 
 ### 2.内存映射过程
-
 1. 系统调用为外存映射文件分配页表
 2. 用户程序直接操作映射到的用户地址空间数据
 3. 当用户访问页表发现未调入内存时，IO从外存调如到内存页
