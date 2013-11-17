@@ -1,21 +1,20 @@
 #!/usr/bin/env bash
 
 # =============================================================================
-# 
-# =============================================================================
-
-
-
-# =============================================================================
 # Functions
 # =============================================================================
 
 function prompt() {
 	echo 'input following commands:'
 	echo '========================='
+	echo ' ./tools.sh -d [--doc]     : see documentation'
 	echo ' ./tools.sh -b [--bigfile] : create 1000M-bulked bigfile nameed "bigfile"'
 	echo ' ./tools.sh -c [--compile] : compile all source file'
 	echo ' ./tools.sh -t [--test]    : test and redirect info to file testReoprt '
+}
+
+function documentation() {
+	firefox https://github.com/Universefei/feinote/tree/master/curriculum/driverProg/shm
 }
 
 function bigfile() {
@@ -43,6 +42,9 @@ function mktest() {
 }
 
 case $1 in
+	"-d"|"--doc")
+		documentation
+		;;
 	"-b"|"--bigfile")
 		bigfile
 		;;
@@ -56,6 +58,4 @@ case $1 in
 		prompt
 		;;
 esac
-
-
 
