@@ -11,6 +11,7 @@ function prompt() {
 	echo ' ./tools.sh -b [--bigfile] : create 1000M-bulked bigfile nameed "bigfile"'
 	echo ' ./tools.sh -c [--compile] : compile all source file'
 	echo ' ./tools.sh -t [--test]    : test and redirect info to file testReoprt '
+	echo ' ./tools.sh -p [--purge]   : clean all generated files'
 }
 
 function documentation() {
@@ -33,6 +34,10 @@ function mktest() {
 	./statistic.sh 2>&1 |tee -a testReport
 }
 
+function clean() {
+	rm bigfile stdio mmap
+}
+
 # =============================================================================
 # Logical
 # =============================================================================
@@ -53,6 +58,9 @@ case $1 in
 		;;
 	"-t"|"--test")
 		mktest
+		;;
+	"-p"|"--purge")
+		clean
 		;;
 	*)
 		prompt
