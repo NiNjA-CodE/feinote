@@ -18,7 +18,7 @@ StandardIO VS. mmap
 ```
 
 ### tools.sh specification
-![tools.sh](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/shm/figure/tools.sh.png)
+![tools.sh](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/shm/figure/tools.png)
 
 **NOTE:**
 * `./tools.sh -d` 查看文档
@@ -34,9 +34,10 @@ StandardIO VS. mmap
 ## DEMO
 
 ### 1. create bigfile
+![bigfile](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/shm/figure/bigfile.png)
 
 ### 2. compile source code file
-![toolsUsage](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/shm/figure/toolsUsage.png)
+![compile](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/shm/figure/compile.png)
 
 ### 3. test
 ![test](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/shm/figure/testResult.png)
