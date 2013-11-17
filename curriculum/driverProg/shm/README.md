@@ -42,6 +42,8 @@ StandardIO VS. mmap
 ### 3. test
 ![test](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/shm/figure/testResult.png)
 
+* 也可在`testReport`中查看测试结果
+* [我的测试结果](https://github.com/Universefei/feinote/blob/master/curriculum/driverProg/shm/testReport)
 
 
 ## Analysis & Conclusion
