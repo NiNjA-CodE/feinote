@@ -49,6 +49,7 @@ MazeGame algorithm component
 **Notice Board**
 
 具体的实现细节可见代码，有较详细注释.
+[click here](https://github.com/Universefei/feinote/blob/master/curriculum/driverProg/mazeGame/exdllSrc/exdll.cpp)
 
 
 ## 运行结果
