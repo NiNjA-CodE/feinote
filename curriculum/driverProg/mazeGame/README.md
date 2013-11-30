@@ -13,15 +13,6 @@ MazeGame algorithm component
 │   ├── StdAfx.cpp              (vc自动生成)
 │   └── StdAfx.h                (vc自动生成)
 ├── figure/
-│   ├── 0.png
-│   ├── 1.png
-│   ├── 2.png
-│   ├── 3.png
-│   ├── 4.png
-│   ├── 5.png
-│   ├── 6.png
-│   ├── 7.png
-│   └── 8.png
 ├── README.md                    (本文档)
 └── workshop/                    (运行文件夹)
     ├── 0.map
@@ -41,8 +32,8 @@ MazeGame algorithm component
 
 ## 算法主要思想
 
-* 贪心
-* 深度优先遍历
+1. 贪心
+2. 深度优先遍历
 
 **贪心的思想**
 
@@ -55,11 +46,31 @@ MazeGame algorithm component
   - 若可选的方向只有一个；尝试这个方向。
   - 若此前没有可选的方向：返回。
 
-**NB**
+**Notice Board**
 
 具体的实现细节可见代码，有较详细注释.
 
 
 ## 运行结果
+
+运行路径和步数可见下图：
+
+![0.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/mazeGame/figure/0.png)
+
+![1.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/mazeGame/figure/1.png)
+
+![2.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/mazeGame/figure/2.png)
+
+![3.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/mazeGame/figure/3.png)
+
+![4.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/mazeGame/figure/4.png)
+
+![5.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/mazeGame/figure/5.png)
+
+![6.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/mazeGame/figure/6.png)
+
+![7.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/mazeGame/figure/7.png)
+
+![8.png](https://raw.github.com/Universefei/feinote/master/curriculum/driverProg/mazeGame/figure/8.png)
 
 
