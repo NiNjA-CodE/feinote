@@ -1,8 +1,8 @@
 /****************************************************************************
 ** Resource object code
 **
-** Created: Mon Dec 9 17:13:07 2013
-**      by: The Resource Compiler for Qt version 4.8.3
+** Created: Mon Dec 9 23:37:22 2013
+**      by: The Resource Compiler for Qt version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -10,7 +10,7 @@
 #include <QtCore/qglobal.h>
 
 static const unsigned char qt_resource_data[] = {
-  // /home/fei/feinote/cpp/qt/collidingmice/images/cheese.jpg
+  // /home/univ/feinote/cpp/qt/collidingmice/images/cheese.jpg
   0x0,0x0,0x3,0x7c,
   0x89,
   0x50,0x4e,0x47,0xd,0xa,0x1a,0xa,0x0,0x0,0x0,0xd,0x49,0x48,0x44,0x52,0x0,

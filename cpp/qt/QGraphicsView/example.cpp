@@ -12,7 +12,7 @@ int main( int argc, char **argv )
 	scene.setSceneRect( -100.0, -100.0, 200.0, 200.0 );
 				 
 	QGraphicsEllipseItem *item = new QGraphicsEllipseItem( 0, &scene );
-	item->setRect( -50.0, -50.0, 150.0, 150.0 );
+	item->setRect( 0.0, 0.0, 100.0, 100.0 );
 						 
 	QGraphicsView view( &scene );
 	view.setRenderHints( QPainter::Antialiasing );

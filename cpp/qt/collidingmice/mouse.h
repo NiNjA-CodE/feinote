@@ -8,10 +8,12 @@ class Mouse : public QGraphicsItem
 	public:
 	   	Mouse();
 
+		//  Two of QGraphicsItem's pure virtual function
 		QRectF boundingRect() const;
+		void paint( QPainter *painter, const QStyleOptionGraphicsItem *option,
+												 QWidget *widget );
+
 		QPainterPath shape() const;
-		void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-												 QWidget *widget);
 
 	protected:
 		void advance(int step);
