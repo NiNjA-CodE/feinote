@@ -10,6 +10,7 @@ static const double Pi = 3.14159265358979323846264338327950288419717;
 static double TwoPi = 2.0 * Pi;
 static double Range = 300.0;
 
+/*----- misc ----------------------------------------------------------------*/
 static qreal normalizeAngle(qreal angle)
 {
 	while (angle < 0)
@@ -22,11 +23,12 @@ static qreal normalizeAngle(qreal angle)
 /*---------------------------------------------------------------------------*/
 /*                               Constructor                                 */
 /*---------------------------------------------------------------------------*/
+//  explicit default constructor.
 Mouse::Mouse() : angle(0), speed(0), mouseEyeDirection(0),
 	color(qrand() % 256, qrand() % 256, qrand() % 256)
 {
 	//setRotation(qrand() % (360 * 16));
-	setRotation( 90 );
+	setRotation( 180 );
 }
 
 /*---------------------------------------------------------------------------*/
@@ -52,6 +54,7 @@ QPainterPath Mouse::shape() const
 /*---------------------------------------------------------------------------*/
 /*                               paint                                       */
 /*---------------------------------------------------------------------------*/
+//  How to draw this QGraphicsItem.
 void Mouse::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
 	// Body
@@ -90,13 +93,16 @@ void Mouse::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *
 /*---------------------------------------------------------------------------*/
 /*                               advance                                     */
 /*---------------------------------------------------------------------------*/
+//  What to do in every timeout() singal, this is SLOT function for timeout()
+//  \signal.
 void Mouse::advance(int step)
 {
 	if (!step)
 		return;
 
-	// Don't move too far away
+	/// Don't move too far away
 	QLineF lineToCenter(QPointF(0, 0), mapFromScene(0, 0));
+
 	if (lineToCenter.length() > Range ) {
 		qreal angleToCenter = ::acos(lineToCenter.dx() / lineToCenter.length());
 		if (lineToCenter.dy() < 0)
@@ -106,21 +112,29 @@ void Mouse::advance(int step)
 		if (angleToCenter < Pi && angleToCenter > Pi / 4) {
 			// Rotate left
 			angle += (angle < -Pi / 2) ? 0.25 : -0.25;
-		} else if (angleToCenter >= Pi && angleToCenter < (Pi + Pi / 2 + Pi / 4)) {
+		} 
+		else if (angleToCenter >= Pi && angleToCenter < (Pi + Pi / 2 + Pi / 4)) {
 			// Rotate right
 			angle += (angle < Pi / 2) ? 0.25 : -0.25;
 		}
-	} else if (::sin(angle) < 0) {
+	} 
+	else if (::sin(angle) < 0) {
 		angle += 0.25;
-	} else if (::sin(angle) > 0) {
+	} 
+	else if (::sin(angle) > 0) {
 		angle -= 0.25;
 	}
 
-	// Try not to crash with any other mice
-	QList<QGraphicsItem *> dangerMice = scene()->items(QPolygonF()
+	///  Try not to crash with any other mice
+	//  QGraphicsItem::scene() return the current that this item in.
+	//  \return 0 if this item is not add to QGraphicsScene.
+	QList<QGraphicsItem *> dangerMice = scene()->items( 
+			QPolygonF()
 			<< mapToScene(0, 0)
 			<< mapToScene(-30, -50)
-			<< mapToScene(30, -50));
+			<< mapToScene(30, -50)
+			);
+
 	foreach (QGraphicsItem *item, dangerMice) {
 		if (item == this)
 			continue;
@@ -140,7 +154,7 @@ void Mouse::advance(int step)
 		}
 	}
 
-	// Add some random movement
+	/// Add some random movement
 	if (dangerMice.size() > 1 && (qrand() % 10) == 0) {
 		if (qrand() % 1)
 			angle += (qrand() % 100) / 500.0;
@@ -157,4 +171,5 @@ void Mouse::advance(int step)
 
 	setRotation(rotation() + dx);
 	setPos(mapToParent(0, -(3 + sin(speed) * 3)));
+	//free( this );
 }
