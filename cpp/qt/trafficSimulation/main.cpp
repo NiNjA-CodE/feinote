@@ -1,9 +1,9 @@
 #include <QtGui>
 #include <math.h>
 #include "car.h"
-
+//#include "carBSN.h"
+#include "carFrom.h"
 #include "carGenerator.h"
-
 
 int main (int argc, char * argv[])
 {
@@ -63,7 +63,8 @@ int main (int argc, char * argv[])
 
 	//  Add cars to scene
 	//Car *car = new Car;
-	CarGenerator *pcargen = new CarGenerator( eBSN, -337.5, -150, Qt::blue );
+	//CarGenerator *pcargen = new CarGenerator( eBSN, -337.5, -150, Qt::blue );
+	CarGenerator *pcargen = new CarGenerator( eBSN, 2 );
 	scene.addItem( pcargen );
 	//car->setStartPos();
 

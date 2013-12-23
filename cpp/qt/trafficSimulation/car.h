@@ -8,7 +8,8 @@ class Car: public QGraphicsItem
 {
 	public:
 		Car();
-		Car( QPointF, QColor, EPlace );
+		//Car( QPointF, QColor, EPlace );
+		Car( EPlace, EPlace, qreal );
 
 		QRectF boundingRect() const;
 		void paint( QPainter *painter, const QStyleOptionGraphicsItem *option,
@@ -19,24 +20,14 @@ class Car: public QGraphicsItem
 
 
 	protected:
-		//  Implement destruct of cars at some situation
-		void advance( int step );
+		//virtual void advance( int step );
 
-	private:
-		//  Generated place
+	public:
 		EPlace genPlace;
 		EPlace dist;
-
-		QColor genColor;
-		QColor distColor;
-
-		QPointF genPoint;
-		QPointF distPoint;
-
-		qreal angle;
 		qreal speed;
 
-		qreal ticker;
+		//qreal ticker;
 
 };
 

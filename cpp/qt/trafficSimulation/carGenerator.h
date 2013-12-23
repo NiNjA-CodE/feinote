@@ -4,12 +4,14 @@
 #include <QGraphicsItem>
 #include "misc.h"
 #include "car.h"
+#include "carFrom.h"
 
 class CarGenerator : public QGraphicsItem
 {
 	public:
 		CarGenerator();
-		CarGenerator( EPlace, qreal, qreal, QColor );
+		//CarGenerator( EPlace, qreal, qreal, QColor );
+		CarGenerator( EPlace, int );
 		
 		QPainterPath shape() const;
 		QRectF boundingRect() const;
@@ -21,9 +23,10 @@ class CarGenerator : public QGraphicsItem
 
 	private:
 		EPlace genPlace;
-		QPointF genPoint;
-		QColor genColor;
+		//QPointF genPoint;
+		//QColor genColor;
 		int ticker;
+		int trafHeavy;  //  traffic condition, car generating speed
 
 };
 

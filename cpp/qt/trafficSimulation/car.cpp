@@ -10,8 +10,7 @@
 /*---------------------------------------------------------------------------*/
 /*                                Constructor                                */
 /*---------------------------------------------------------------------------*/
-Car::Car() : angle(0), speed(0.1), genPlace(eBSN), dist(eBSS),
-	genColor(Qt::blue), distColor(Qt::yellow), ticker(70)
+Car::Car() : speed(0.1), genPlace(eBSN), dist(eBSS)
 {
 	//  Init genPlace
 	/*
@@ -42,7 +41,7 @@ Car::Car() : angle(0), speed(0.1), genPlace(eBSN), dist(eBSS),
 	}
 
 	//  Init distination
-	//dist = (( qrand() % 5 ) + (int)genPlace) % 5;
+	dist = (enum EPlace) ((( qrand() % 5 ) + (int)genPlace) % 5);
 
 	genPlace = eBSN;
 	genColor = Qt::blue;
@@ -58,10 +57,10 @@ Car::Car() : angle(0), speed(0.1), genPlace(eBSN), dist(eBSS),
 
 }
 
-Car::Car( QPointF point, QColor color, EPlace place ) :
-	genPoint(point), genColor(color), genPlace(place)
+Car::Car( EPlace gen, EPlace dis, qreal fast ) :
+	genPlace(gen), dist(dis), speed(fast)
 {
-	setPos( genPoint );
+	setStartPos();
 
 }
 	
@@ -70,7 +69,8 @@ Car::Car( QPointF point, QColor color, EPlace place ) :
 /*---------------------------------------------------------------------------*/
 void Car::setStartPos()
 {
-	setPos( -337.5, -150 );
+	//setPos( -337.5, -150 );
+	setPos( startPoint[genPlace] );
 	//setPos( -337.5, -87.5 );
 }
 
@@ -100,17 +100,20 @@ QRectF Car::boundingRect() const
 /*---------------------------------------------------------------------------*/
 void Car::paint( QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-	painter->setBrush( genColor );
+	//  Car body
+	painter->setBrush( pointColor[genPlace] );
 	painter->drawRect( -2.5, -5, 5, 10 );
 
-	painter->setBrush( distColor );
+	//  Car front window
+	painter->setBrush( pointColor[dist] );
 	painter->drawRect( -2, 0.5, 4, 4 );
 
 }
 
 /*---------------------------------------------------------------------------*/
-/*                                advance                                    */
+/*                         virtual advance                                   */
 /*---------------------------------------------------------------------------*/
+/*
 void Car::advance( int step )
 {
 	if(!step)
@@ -128,8 +131,7 @@ void Car::advance( int step )
 	setPos( mapToParent( 0, 0.5 ));
 	ticker--;
 }
-
-
+*/
 
 
 
