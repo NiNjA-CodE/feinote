@@ -1,7 +1,13 @@
 #ifndef MISC_H
 #define MISC_H
 
+//  Simulation speed up
+static const int speedUp = 1;
 
+//  How many frame per secend
+static const int freq = 300;
+
+//  Six road points
 enum EPlace {
 	eBSN = 0,  //  Baisha North
 	eBSS,	   //  Baisha South
@@ -29,6 +35,10 @@ static const QPointF endPoint[6] = {
 	QPointF(500, -62.5)		//  endPoint[eRHE]
 };
 
+//  Corner center
+static const QPointF cr1Center = QPointF( -325, -75 );
+static const QPointF cr2Center = QPointF( 325, -75 );
+
 //  Where to check traffic Light status.
 static const QPointF lightCr1BSN = QPointF(-337.5, -100);
 static const QPointF lightCr1BSS = QPointF(-312.5, -50);
@@ -46,10 +56,10 @@ static const QPointF RHE2BSN = QPointF(-312.5, -87.5);
 static const QPointF RHW2BSS = QPointF(-337.5, -62.5);
 static const QPointF BSS2RHE = QPointF(-312.5, -62.5);
 
-static const QPointF RHWDown = QPointF(-500, -87.5);
-static const QPointF RHWUp = QPointF(-500, -62.5);
-static const QPointF RHWRight = QPointF(500, -62.5);
-static const QPointF RHWLeft = QPointF(500, -87.5);
+static const QPointF RHDown = QPointF(-500, -87.5);
+static const QPointF RHUp = QPointF(500, -62.5);
+static const QPointF RHRight = QPointF(-500, -62.5);
+static const QPointF RHLeft = QPointF(500, -87.5);
 
 static const QPointF TBN2RHW = QPointF(312.5, -87.5);
 static const QPointF RHE2TBN = QPointF(337.5, -87.5);
@@ -59,11 +69,15 @@ static const QPointF TBS2RHE = QPointF(337.5, -62.5);
 //  Color tags of cars from different road point
 static const QColor pointColor[6] = {
 	Qt::blue,			//  pointColor[eBSN]
-	Qt::yellow,			//  pointColor[eBSS]
+	Qt::darkGreen,		//  pointColor[eBSS]
 	Qt::cyan,           //  pointColor[eTBN]
-	Qt::gray,           //  pointColor[eTBS]
+	Qt::darkRed,        //  pointColor[eTBS]
 	Qt::black,          //  pointColor[eRHW]
 	Qt::magenta         //  pointColor[eRHE]
 };
+
+//  Traffic light color
+static const QColor trafficLightRed = Qt::red;
+static const QColor trafficLightGreen = Qt::green;
 
 #endif //  MISC_H

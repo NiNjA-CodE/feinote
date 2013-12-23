@@ -2,21 +2,38 @@
 #define TRAFFICLIGHT_H
 
 #include <QGraphicsItem>
+#include "misc.h"
 
-class TrafficLight : public QGraphicItem
+
+enum ELightDirct {
+	eNS = 0,
+	eWE
+};
+
+class TrafficLight : public QGraphicsItem
 {
 	public:
-		TrafficLight();
+		//TrafficLight();
+		//  param sec is real world second
+		TrafficLight( int sec );
+		QColor getLightStatus( ELightDirct );
+		//void setStartPos();
+
+		QRectF boundingRect() const;
+		void paint( QPainter* painter, const QStyleOptionGraphicsItem* option,
+				QWidget* Widget );
+		QPainterPath shape() const;
+
 
 	protected:
-		advance();
+		 void advance( int step );
 
 	private:
-		qreal timeOffset;
-		QColor north;
-		QColor south;
-		QColor east;
-		QColor west;
+		int ticker;
+		//QColor northSouth;
+		//QColor westEast;
 
-}
+};
+
+#endif  //  TRAFFICLIGHT_H
 
