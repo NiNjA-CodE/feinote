@@ -3,7 +3,7 @@
 
 #include "car.h"
 #include <QGraphicsItem>
-#include "misc.h"
+//#include "misc.h"
 
 /*---------------------------------------------------------------------------*/
 /*                                  CarBSN                                   */
@@ -12,6 +12,7 @@ class CarBSN : public Car
 {
 	public:
 		CarBSN( qreal speed );
+		~CarBSN();
 
 	protected:
 		void advance( int step );
@@ -24,6 +25,7 @@ class CarBSS : public Car
 {
 	public:
 		CarBSS( qreal speed );
+		~CarBSS();
 
 	protected:
 		void advance( int step );
@@ -36,6 +38,7 @@ class CarTBN : public Car
 {
 	public:
 		CarTBN( qreal speed );
+		~CarTBN();
 
 	protected:
 		void advance( int step );
@@ -48,6 +51,7 @@ class CarTBS : public Car
 {
 	public:
 		CarTBS( qreal speed );
+		~CarTBS();
 
 	protected:
 		void advance( int step );
@@ -60,6 +64,7 @@ class CarRHW : public Car
 {
 	public:
 		CarRHW( qreal speed );
+		~CarRHW();
 
 	protected:
 		void advance( int step );
@@ -72,6 +77,7 @@ class CarRHE : public Car
 {
 	public:
 		CarRHE( qreal speed );
+		~CarRHE();
 
 	protected:
 		void advance( int step );

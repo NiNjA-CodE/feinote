@@ -18,6 +18,8 @@ class CarGenerator : public QGraphicsItem
 		void paint( QPainter* painter, const QStyleOptionGraphicsItem* option,
 				QWidget* widget );
 
+		void placeSet();
+
 	protected:
 		void advance( int step );
 

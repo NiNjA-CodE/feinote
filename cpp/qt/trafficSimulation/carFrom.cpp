@@ -20,15 +20,19 @@ CarBSN::CarBSN( qreal spd ) : Car( eBSN, eBSN, spd )
 	setRotation( 0 );
 }
 
-/*----- CarBSS --------------------------------------------------------------*/
-CarBSS::CarBSS( qreal spd ) : Car( eBSS, eBSS, spd )
+CarBSN::~CarBSN()
 {
-	//  Init distination
-	dist = (enum EPlace) ((( qrand() % 5 ) + (int)genPlace +1) % 6);
+}
+
+/*----- CarBSS --------------------------------------------------------------*/
+CarBSS::CarBSS( qreal spd ) : Car( eBSS, eBSS, spd ) { //  Init distination dist = (enum EPlace) ((( qrand() % 5 ) + (int)genPlace +1) % 6);
 	setStartPos();
 	setRotation( 180 );
 }
 
+CarBSS::~CarBSS()
+{
+}
 /*----- CarTBN --------------------------------------------------------------*/
 CarTBN::CarTBN( qreal spd ) : Car( eTBN, eTBN, spd )
 {
@@ -38,6 +42,9 @@ CarTBN::CarTBN( qreal spd ) : Car( eTBN, eTBN, spd )
 	setRotation( 0 );
 }
 
+CarTBN::~CarTBN()
+{
+}
 /*----- CarTBS --------------------------------------------------------------*/
 CarTBS::CarTBS( qreal spd ) : Car( eTBS, eTBS, spd )
 {
@@ -48,6 +55,9 @@ CarTBS::CarTBS( qreal spd ) : Car( eTBS, eTBS, spd )
 	setRotation( 180 );
 }
 
+CarTBS::~CarTBS()
+{
+}
 /*----- CarRHW --------------------------------------------------------------*/
 CarRHW::CarRHW( qreal spd ) : Car( eRHW, eRHW, spd )
 {
@@ -58,6 +68,9 @@ CarRHW::CarRHW( qreal spd ) : Car( eRHW, eRHW, spd )
 	setRotation( -90 );
 }
 
+CarRHW::~CarRHW()
+{
+}
 /*----- CarRHE --------------------------------------------------------------*/
 CarRHE::CarRHE( qreal spd ) : Car( eRHE, eRHE, spd )
 {
@@ -67,6 +80,9 @@ CarRHE::CarRHE( qreal spd ) : Car( eRHE, eRHE, spd )
 	setRotation( 90 );
 }
 
+CarRHE::~CarRHE()
+{
+}
 /*===========================================================================*/
 /*                                advance                                    */
 /*===========================================================================*/
@@ -78,7 +94,12 @@ void CarBSN::advance( int step )
 		return;
 
 
+	
+	//bool forward;
+
 	QPointF curLocation = this->mapToScene( 0, 0 );
+
+	//  Turnning business logic
 	if ( curLocation == BSN2RHW ) {
 		if ( dist != eBSS ) {
 			setRotation( 90 );
@@ -118,7 +139,12 @@ void CarBSN::advance( int step )
 		setRotation( 180 );  //  Head to TBN
 	}
 
-	setPos( mapToParent( 0, 0.5 ));
+	//  Status checking
+	
+	checkLightForward( );
+	if ( forward ) {
+		setPos( mapToParent( 0, 0.5 ) );
+	}
 }
 
 /*----- CarBSS --------------------------------------------------------------*/
@@ -126,6 +152,10 @@ void CarBSS::advance( int step )
 {
 	if(!step)
 		return;
+
+
+	//bool forward;
+	
 
 	QPointF curLocation = this->mapToScene( 0, 0 );
 	if ( curLocation == BSS2RHE ) {
@@ -162,7 +192,10 @@ void CarBSS::advance( int step )
 	}
 	//  else Head to RHW
 
-	setPos( mapToParent( 0, 0.5 ));
+	checkLightForward( );
+	if ( forward ) {
+		setPos( mapToParent( 0, 0.5 ) );
+	}
 }
 /*----- CarTBN --------------------------------------------------------------*/
 void CarTBN::advance( int step )
@@ -170,6 +203,7 @@ void CarTBN::advance( int step )
 	if(!step)
 		return;
 
+	//bool forward;
 
 	QPointF curLocation = this->mapToScene( 0, 0 );
 	if ( curLocation == TBN2RHW ) {
@@ -206,13 +240,19 @@ void CarTBN::advance( int step )
 	}
 	//  else Head to RHE
 
-	setPos( mapToParent( 0, 0.5 ));
+	//setPos( mapToParent( 0, 0.5 ));
+	checkLightForward( );
+	if ( forward ) {
+		setPos( mapToParent( 0, 0.5 ) );
+	}
 }
 /*----- CarTBS --------------------------------------------------------------*/
 void CarTBS::advance( int step )
 {
 	if(!step)
 		return;
+
+	//bool forward;
 
 	QPointF curLocation = this->mapToScene( 0, 0 );
 	if ( curLocation == TBS2RHE ) {
@@ -251,7 +291,11 @@ void CarTBS::advance( int step )
 	}
 
 
-	setPos( mapToParent( 0, 0.5 ));
+	//setPos( mapToParent( 0, 0.5 ));
+	checkLightForward( );
+	if ( forward ) {
+		setPos( mapToParent( 0, 0.5 ) );
+	}
 }
 
 /*----- CarRHW --------------------------------------------------------------*/
@@ -260,8 +304,10 @@ void CarRHW::advance( int step )
 	if(!step)
 		return;
 
+	//bool forward;
 
 	QPointF curLocation = this->mapToScene( 0, 0 );
+
 	if ( curLocation == RHRight ) {
 	}
 	else if ( curLocation == RHW2BSS ) {
@@ -294,7 +340,11 @@ void CarRHW::advance( int step )
 	}
 	//  else go to the adverse direction 
 
-	setPos( mapToParent( 0, 0.5 ));
+	//setPos( mapToParent( 0, 0.5 ));
+	checkLightForward( );
+	if ( forward ) {
+		setPos( mapToParent( 0, 0.5 ) );
+	}
 }
 /*----- CarRHE --------------------------------------------------------------*/
 void CarRHE::advance( int step )
@@ -302,6 +352,7 @@ void CarRHE::advance( int step )
 	if(!step)
 		return;
 
+	//bool forward;
 
 	QPointF curLocation = this->mapToScene( 0, 0 );
 	if ( curLocation == RHLeft ) {
@@ -336,5 +387,9 @@ void CarRHE::advance( int step )
 	}
 	//  else go to the adverse direction 
 
-	setPos( mapToParent( 0, 0.5 ));
+	//setPos( mapToParent( 0, 0.5 ));
+	checkLightForward( );
+	if ( forward ) {
+		setPos( mapToParent( 0, 0.5 ) );
+	}
 }

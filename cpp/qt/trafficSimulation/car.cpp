@@ -5,6 +5,7 @@
 #include <QStyleOption>
 
 #include <math.h>
+//#include "misc.h"
 
 
 /*---------------------------------------------------------------------------*/
@@ -22,6 +23,9 @@ Car::Car( EPlace gen, EPlace dis, qreal fast ) :
 {
 	setStartPos();
 
+}
+
+Car::~Car() {
 }
 	
 /*---------------------------------------------------------------------------*/
@@ -67,6 +71,89 @@ void Car::paint( QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 	//  Car front window
 	painter->setBrush( pointColor[dist] );
 	painter->drawRect( -3, 0.5, 6, 5 );
+
+}
+
+/*---------------------------------------------------------------------------*/
+/*                                 ableToForward                             */
+/*---------------------------------------------------------------------------*/
+bool Car::ableToForward( TrafficLight* light, ELightDirct direct ) const
+{
+	QColor curColor = light->getLightStatus( direct );
+
+	if ( curColor == trafficLightRed ) {
+		return false;
+	}
+	else if ( curColor == trafficLightGreen ) {
+		return true;
+	}
+}
+
+/*---------------------------------------------------------------------------*/
+/*                                 checkLightForward                         */
+/*---------------------------------------------------------------------------*/
+void Car::checkLightForward( ) 
+{
+
+	QPointF curLoc = mapToScene( 0, 0 );
+
+	if ( curLoc == lightCr1BSN || curLoc == lightCr1BSS ) {
+		if ( !ableToForward( pLightAtCr1, eNS ) ) {
+		//if ( !pLightAtCr1->ableNS ) {
+		//if ( pLightAtCr1->getLightStatus( eNS ) == trafficLightRed ) {
+			//setPos( mapToParent( 0, 0.5 ) );
+			forward = false;
+		}
+		else {
+			//setPos( mapToParent( 0, 0.5 ) );
+			forward = true;
+		}
+
+	}
+	else if ( curLoc == lightCr1RHW || curLoc == lightCr1RHE ) {
+		if ( !ableToForward( pLightAtCr1, eWE ) ) {
+			//setPos( mapToParent( 0, 0.5 ) );
+			forward = false;
+		}
+		else {
+			//setPos( mapToParent( 0, 0.5 ) );
+			forward = true;
+		}
+	}
+	else if ( curLoc == lightCr2TBN || curLoc == lightCr2TBS ) {
+		if ( !ableToForward( pLightAtCr2, eNS ) ) {
+			forward = false;
+			//setPos( mapToParent( 0, 0.5 ) );
+		}
+		else {
+			//setPos( mapToParent( 0, 0.5 ) );
+			forward = true;
+		}
+	}
+	else if ( curLoc == lightCr2RHW || curLoc == lightCr2RHE ) {
+		if ( !ableToForward( pLightAtCr2, eWE ) ) {
+			forward = false;
+			//setPos( mapToParent( 0, 0.5 ) );
+		}
+		else {
+			//setPos( mapToParent( 0, 0.5 ) );
+			forward = true;
+		}
+	}
+	else {
+		//setPos( mapToParent( 0, 0.5 ) );
+		//*forward = true;
+	//}
+
+		QPointF curLocFront = mapToScene( 0, 15 );
+		QGraphicsItem* pfront = scene()->itemAt( curLocFront );
+		if (pfront != 0) {
+			forward = false;
+		}
+		else {
+			forward = true;
+		}
+	}
 
 }
 

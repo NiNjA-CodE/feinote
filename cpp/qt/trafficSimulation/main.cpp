@@ -5,6 +5,7 @@
 #include "carFrom.h"
 #include "carGenerator.h"
 #include "trafficLight.h"
+//#include "userDefines.h"
 
 int main (int argc, char * argv[])
 {
@@ -47,41 +48,41 @@ int main (int argc, char * argv[])
 	QGraphicsTextItem bsn("BSN");
 	bsn.setDefaultTextColor( pointColor[eBSN] );
 	scene.addItem( &bsn );
-	bsn.setPos( -340, -180 );
+	bsn.setPos( -340, -230 );
 	//  BSS
 	QGraphicsTextItem bss("BSS");
 	bss.setDefaultTextColor( pointColor[eBSS] );
 	scene.addItem( &bss );
-	bss.setPos( -340, 150 );
+	bss.setPos( -340, 200 );
 	//  TBN
 	QGraphicsTextItem tbn("TBN");
 	tbn.setDefaultTextColor( pointColor[eTBN] );
 	scene.addItem( &tbn );
-	tbn.setPos( 310, -180 );
+	tbn.setPos( 310, -230 );
 	//  TBS
 	QGraphicsTextItem tbs("TBS");
 	tbs.setDefaultTextColor( pointColor[eTBS] );
 	scene.addItem( &tbs );
-	tbs.setPos( 310, 150 );
+	tbs.setPos( 310, 200 );
 	//  RHW
 	QGraphicsTextItem rhw("RHW");
 	rhw.setDefaultTextColor( pointColor[eRHW] );
 	scene.addItem( &rhw );
-	rhw.setPos( -550, -85 );
+	rhw.setPos( -580, -85 );
 	//  RHE
 	QGraphicsTextItem rhe("RHE");
 	rhe.setDefaultTextColor( pointColor[eRHE] );
 	scene.addItem( &rhe );
-	rhe.setPos( 510, -85 );
+	rhe.setPos( 550, -85 );
 
 
 	//  Draw traffic lights
-	TrafficLight* pLightatCr1 = new TrafficLight( 60 );
-	scene.addItem( pLightatCr1);
-	pLightatCr1->setPos( cr1Center );
-	TrafficLight* pLightatCr2 = new TrafficLight( 0 );
-	scene.addItem( pLightatCr2);
-	pLightatCr2->setPos( cr2Center );
+	//TrafficLight* pLightatCr1 = &lightAtCr1;
+	scene.addItem( pLightAtCr1);
+	pLightAtCr1->setPos( cr1Center );
+	//TrafficLight* pLightatCr2 = &lightAtCr2;
+	scene.addItem( pLightAtCr2);
+	pLightAtCr2->setPos( cr2Center );
 
 
 	//  Add car generators to scene
@@ -89,19 +90,19 @@ int main (int argc, char * argv[])
 	//  Generator at BSN
 	pcargen = new CarGenerator( eBSN, 1 );
 	scene.addItem( pcargen );
-	//  Generator at BSN
+	//  Generator at BSS
 	pcargen = new CarGenerator( eBSS, 1 );
 	scene.addItem( pcargen );
-	//  Generator at BSN
+	//  Generator at TBN
 	pcargen = new CarGenerator( eTBN, 1 );
 	scene.addItem( pcargen );
-	//  Generator at BSN
+	//  Generator at TBS
 	pcargen = new CarGenerator( eTBS, 1 );
 	scene.addItem( pcargen );
-	//  Generator at BSN
+	//  Generator at RHW
 	pcargen = new CarGenerator( eRHW, 3 );
 	scene.addItem( pcargen );
-	//  Generator at BSN
+	//  Generator at RHE
 	pcargen = new CarGenerator( eRHE, 3 );
 	scene.addItem( pcargen );
 	//car->setStartPos();

@@ -1,11 +1,12 @@
 #ifndef MISC_H
 #define MISC_H
 
+#include "trafficLight.h"
 //  Simulation speed up
-static const int speedUp = 1;
+//static const int speedUp = 1;
 
 //  How many frame per secend
-static const int freq = 300;
+//static const int freq = 300;
 
 //  Six road points
 enum EPlace {
@@ -27,12 +28,12 @@ static const QPointF startPoint[6] = {
 };
 
 static const QPointF endPoint[6] = {
-	QPointF(-312.5, -150),		//  endPoint[eBSN]
-	QPointF(-337.5, 150),		//  endPoint[eBSS]
-	QPointF(337.5, -150),		//  endPoint[eTBN]
-	QPointF(312.5, 150),		//  endPoint[eTBS]
-	QPointF(-500, -87.5),		//  endPoint[eRHW]
-	QPointF(500, -62.5)		//  endPoint[eRHE]
+	QPointF(-312.5, -180),		//  endPoint[eBSN]
+	QPointF(-337.5, 180),		//  endPoint[eBSS]
+	QPointF(337.5, -180),		//  endPoint[eTBN]
+	QPointF(312.5, 180),		//  endPoint[eTBS]
+	QPointF(-530, -87.5),		//  endPoint[eRHW]
+	QPointF(530, -62.5)		//  endPoint[eRHE]
 };
 
 //  Corner center
@@ -45,8 +46,8 @@ static const QPointF lightCr1BSS = QPointF(-312.5, -50);
 static const QPointF lightCr1RHW = QPointF(-350, -62.5);
 static const QPointF lightCr1RHE = QPointF(-300, -87.5);
 
-static const QPointF lightCr2TBN = QPointF(-312.5, -100);
-static const QPointF lightCr2TBS = QPointF(-337.5, -50);
+static const QPointF lightCr2TBN = QPointF(312.5, -100);
+static const QPointF lightCr2TBS = QPointF(337.5, -50);
 static const QPointF lightCr2RHW = QPointF(300, -62.5);
 static const QPointF lightCr2RHE = QPointF(350, -87.5);
 
@@ -77,7 +78,23 @@ static const QColor pointColor[6] = {
 };
 
 //  Traffic light color
-static const QColor trafficLightRed = Qt::red;
-static const QColor trafficLightGreen = Qt::green;
+//static const QColor trafficLightRed = Qt::red;
+//static const QColor trafficLightGreen = Qt::green;
 
+//  Global traffic lights
+//volatile static TrafficLight pLightAtCr1( 0 );
+//volatile static TrafficLight pLightAtCr2( 125 );
+static TrafficLight* pLightAtCr1 = new TrafficLight( 0 );
+//static TrafficLight* pLightAtCr1 = &lightAtCr1;
+//static TrafficLight* pLightAtCr2 = &lightAtCr2;
+static TrafficLight* pLightAtCr2 = new TrafficLight( 125 );
+
+/*
+volatile bool ableCr1NS = false;
+volatile bool ableCr1WE = false;
+volatile bool ableCr2NS = false;
+volatile bool ableCr2WE = false;
+*/
+
+//static int flag;
 #endif //  MISC_H
