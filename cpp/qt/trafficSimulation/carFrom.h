@@ -14,8 +14,8 @@ class CarBSN : public Car
 		CarBSN( qreal speed );
 		virtual ~CarBSN();
 
-	protected:
-		void advance( int step );
+	private:
+		void turnDirection();
 };
 
 /*---------------------------------------------------------------------------*/
@@ -27,8 +27,8 @@ class CarBSS : public Car
 		CarBSS( qreal speed );
 		virtual ~CarBSS();
 
-	protected:
-		void advance( int step );
+	private:
+		void turnDirection();
 };
 
 /*---------------------------------------------------------------------------*/
@@ -40,8 +40,8 @@ class CarTBN : public Car
 		CarTBN( qreal speed );
 		virtual ~CarTBN();
 
-	protected:
-		void advance( int step );
+	private:
+		void turnDirection();
 };
 
 /*---------------------------------------------------------------------------*/
@@ -53,8 +53,8 @@ class CarTBS : public Car
 		CarTBS( qreal speed );
 		virtual ~CarTBS();
 
-	protected:
-		void advance( int step );
+	private:
+		void turnDirection();
 };
 
 /*---------------------------------------------------------------------------*/
@@ -66,8 +66,8 @@ class CarRHW : public Car
 		CarRHW( qreal speed );
 		virtual ~CarRHW();
 
-	protected:
-		void advance( int step );
+	private:
+		void turnDirection();
 };
 
 /*---------------------------------------------------------------------------*/
@@ -79,8 +79,8 @@ class CarRHE : public Car
 		CarRHE( qreal speed );
 		virtual ~CarRHE();
 
-	protected:
-		void advance( int step );
+	private:
+		void turnDirection();
 };
 
 #endif // CARFROM_H

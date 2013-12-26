@@ -3,8 +3,9 @@
 
 #include <QGraphicsItem>
 #include "misc.h"
-//#include "trafficLight.h"
-//#include "userDefines.h"
+
+//  Using template Design pattern in this class,
+//  \ derived classes need reimplement virtual function turnDirection()
 
 class Car: public QGraphicsItem
 {
@@ -21,18 +22,20 @@ class Car: public QGraphicsItem
 		QPainterPath shape() const;
 		void setStartPos();
 
-		bool ableToForward( TrafficLight*, ELightDirct ) const;
-		void checkLightForward( ) ;
 
 
 	protected:
-		//virtual void advance( int step );
+		void advance( int step );
 
 	public:
+        virtual void turnDirection();
+
+		bool ableToForward( TrafficLight*, ELightDirct ) const;
+		void checkLightForward( ) ;
+
 		EPlace genPlace;
 		EPlace dist;
 		qreal speed;
-		volatile bool forward;
 
 		//qreal ticker;
 

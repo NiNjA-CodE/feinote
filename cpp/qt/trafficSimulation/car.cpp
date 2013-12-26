@@ -95,6 +95,8 @@ bool Car::ableToForward( TrafficLight* light, ELightDirct direct ) const
 void Car::checkLightForward( ) 
 {
 
+    bool bForward = true;
+
 	QPointF curLoc = mapToScene( 0, 0 );
 
 	if ( curLoc == lightCr1BSN || curLoc == lightCr1BSS ) {
@@ -102,58 +104,83 @@ void Car::checkLightForward( )
 		//if ( !pLightAtCr1->ableNS ) {
 		//if ( pLightAtCr1->getLightStatus( eNS ) == trafficLightRed ) {
 			//setPos( mapToParent( 0, 0.5 ) );
-			forward = false;
+			bForward = false;
 		}
 		else {
 			//setPos( mapToParent( 0, 0.5 ) );
-			forward = true;
+			bForward = true;
 		}
 
 	}
 	else if ( curLoc == lightCr1RHW || curLoc == lightCr1RHE ) {
 		if ( !ableToForward( pLightAtCr1, eWE ) ) {
 			//setPos( mapToParent( 0, 0.5 ) );
-			forward = false;
+			bForward = false;
 		}
 		else {
 			//setPos( mapToParent( 0, 0.5 ) );
-			forward = true;
+			bForward = true;
 		}
 	}
 	else if ( curLoc == lightCr2TBN || curLoc == lightCr2TBS ) {
 		if ( !ableToForward( pLightAtCr2, eNS ) ) {
-			forward = false;
+			bForward = false;
 			//setPos( mapToParent( 0, 0.5 ) );
 		}
 		else {
 			//setPos( mapToParent( 0, 0.5 ) );
-			forward = true;
+			bForward = true;
 		}
 	}
 	else if ( curLoc == lightCr2RHW || curLoc == lightCr2RHE ) {
 		if ( !ableToForward( pLightAtCr2, eWE ) ) {
-			forward = false;
+			bForward = false;
 			//setPos( mapToParent( 0, 0.5 ) );
 		}
 		else {
 			//setPos( mapToParent( 0, 0.5 ) );
-			forward = true;
+			bForward = true;
 		}
 	}
 	else {
 		//setPos( mapToParent( 0, 0.5 ) );
-		//*forward = true;
+		//*bForward = true;
 	//}
 
 		QPointF curLocFront = mapToScene( 0, 15 );
 		QGraphicsItem* pfront = scene()->itemAt( curLocFront );
 		if (pfront != 0) {
-			forward = false;
+			bForward = false;
 		}
 		else {
-			forward = true;
+			bForward = true;
 		}
 	}
 
+    //  Go forward if bForward is ture
+    if ( bForward ) {
+		setPos( mapToParent( 0, 0.5 ) );
+    }
+
 }
 
+/*---------------------------------------------------------------------------*/
+/*                               turnDirection                               */
+/*---------------------------------------------------------------------------*/
+void Car::turnDirection()
+{
+}
+
+/*---------------------------------------------------------------------------*/
+/*                               advance                                     */
+/*---------------------------------------------------------------------------*/
+void Car::advance( int step )
+{
+	if(!step)
+		return;
+
+    //  How to turn, every derived class need reimplement this function;
+    turnDirection();
+	//  Check if this advance should go bForward.
+	checkLightForward();
+}

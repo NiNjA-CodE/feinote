@@ -84,18 +84,12 @@ CarRHE::~CarRHE()
 {
 }
 /*===========================================================================*/
-/*                                advance                                    */
+/*                                turnDirection                                    */
 /*===========================================================================*/
 
 /*----- CarBSN --------------------------------------------------------------*/
-void CarBSN::advance( int step )
+void CarBSN::turnDirection()
 {
-	if(!step)
-		return;
-
-
-	
-	//bool forward;
 
 	QPointF curLocation = this->mapToScene( 0, 0 );
 
@@ -139,24 +133,11 @@ void CarBSN::advance( int step )
 		setRotation( 180 );  //  Head to TBN
 	}
 
-	//  Status checking
-	
-	checkLightForward( );
-	if ( forward ) {
-		setPos( mapToParent( 0, 0.5 ) );
-	}
 }
 
 /*----- CarBSS --------------------------------------------------------------*/
-void CarBSS::advance( int step )
+void CarBSS::turnDirection()
 {
-	if(!step)
-		return;
-
-
-	//bool forward;
-	
-
 	QPointF curLocation = this->mapToScene( 0, 0 );
 	if ( curLocation == BSS2RHE ) {
 		if ( dist != eBSN ) {
@@ -191,20 +172,11 @@ void CarBSS::advance( int step )
 		}
 	}
 	//  else Head to RHW
-
-	checkLightForward( );
-	if ( forward ) {
-		setPos( mapToParent( 0, 0.5 ) );
-	}
 }
+
 /*----- CarTBN --------------------------------------------------------------*/
-void CarTBN::advance( int step )
+void CarTBN::turnDirection()
 {
-	if(!step)
-		return;
-
-	//bool forward;
-
 	QPointF curLocation = this->mapToScene( 0, 0 );
 	if ( curLocation == TBN2RHW ) {
 		if ( dist != eTBS ) {
@@ -239,21 +211,11 @@ void CarTBN::advance( int step )
 		}
 	}
 	//  else Head to RHE
-
-	//setPos( mapToParent( 0, 0.5 ));
-	checkLightForward( );
-	if ( forward ) {
-		setPos( mapToParent( 0, 0.5 ) );
-	}
 }
+
 /*----- CarTBS --------------------------------------------------------------*/
-void CarTBS::advance( int step )
+void CarTBS::turnDirection()
 {
-	if(!step)
-		return;
-
-	//bool forward;
-
 	QPointF curLocation = this->mapToScene( 0, 0 );
 	if ( curLocation == TBS2RHE ) {
 		if ( dist != eTBN ) {
@@ -291,21 +253,11 @@ void CarTBS::advance( int step )
 	}
 
 
-	//setPos( mapToParent( 0, 0.5 ));
-	checkLightForward( );
-	if ( forward ) {
-		setPos( mapToParent( 0, 0.5 ) );
-	}
 }
 
 /*----- CarRHW --------------------------------------------------------------*/
-void CarRHW::advance( int step )
+void CarRHW::turnDirection()
 {
-	if(!step)
-		return;
-
-	//bool forward;
-
 	QPointF curLocation = this->mapToScene( 0, 0 );
 
 	if ( curLocation == RHRight ) {
@@ -340,20 +292,10 @@ void CarRHW::advance( int step )
 	}
 	//  else go to the adverse direction 
 
-	//setPos( mapToParent( 0, 0.5 ));
-	checkLightForward( );
-	if ( forward ) {
-		setPos( mapToParent( 0, 0.5 ) );
-	}
 }
 /*----- CarRHE --------------------------------------------------------------*/
-void CarRHE::advance( int step )
+void CarRHE::turnDirection()
 {
-	if(!step)
-		return;
-
-	//bool forward;
-
 	QPointF curLocation = this->mapToScene( 0, 0 );
 	if ( curLocation == RHLeft ) {
 	}
@@ -387,9 +329,4 @@ void CarRHE::advance( int step )
 	}
 	//  else go to the adverse direction 
 
-	//setPos( mapToParent( 0, 0.5 ));
-	checkLightForward( );
-	if ( forward ) {
-		setPos( mapToParent( 0, 0.5 ) );
-	}
 }
