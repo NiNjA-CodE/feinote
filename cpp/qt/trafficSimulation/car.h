@@ -10,7 +10,7 @@ class Car: public QGraphicsItem
 {
 	public:
 		Car();
-		~Car();
+		virtual ~Car();
 		//Car( QPointF, QColor, EPlace );
 		Car( EPlace, EPlace, qreal );
 
