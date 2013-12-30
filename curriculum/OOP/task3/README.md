@@ -3,7 +3,7 @@ Template Method
 
 ###PROBELM：
 
-![PROBLEM]()
+![PROBLEM](https://raw.github.com/Universefei/feinote/master/curriculum/OOP/task3/figures/problem.png)
 
 
 ###APPLICATION SENARIOES
