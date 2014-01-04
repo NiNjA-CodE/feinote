@@ -12,48 +12,48 @@
  *****************************************************************************/
 class Car: public QGraphicsItem
 {
-	public:
+    public:
         
-		Car();
+        Car();
 
         /** Constructor: Create a new Car
          *  \param eStart   : Start point of car
          *  \param eEnd     : destination of car
          *  \param speed    : Speed of car
          */
-		Car( EPlace, EPlace, qreal );
+        Car( EPlace, EPlace, qreal );
 
-		virtual ~Car();
+        virtual ~Car();
 
         /** QGraphicsItem's pure virtual public function 
          *  \returns an estimate of the area painted by the item
          */
-		QRectF boundingRect() const;
+        QRectF boundingRect() const;
 
         /** QGraphicsItem's pure virtual public function
          *  \do the actual painting
          */
-		void paint( QPainter *painter, const QStyleOptionGraphicsItem *option,
-				QWidget *widget );
+        void paint( QPainter *painter, const QStyleOptionGraphicsItem *option,
+                QWidget *widget );
 
         /** QGraphicsItem's virtuanl function
          *  \return the accurate shape of item
          */
-		QPainterPath shape() const;
+        QPainterPath shape() const;
 
         /** Put this car to corresponding point in QGraphicsView
          *  \this operation was invoked in constructor
          */
-		void setStartPos();
+        void setStartPos();
 
-	protected:
+    protected:
         /** Handling the animation so it all happens on one update.
          *  \defining what to do in every frame.
          *  \defining process in this operation.
          */
-		void advance( int step );
+        void advance( int step );
 
-	public:
+    public:
         /** Determining if it is need to turn or how to turn in this frame
          *  \or update
          *  This operation was invoked in advance. and every derived class
@@ -65,22 +65,22 @@ class Car: public QGraphicsItem
          *  \param trafficLight*    : which traffic light to check
          *  \param ELightDirect     : which direction to check
          */
-		bool ableToForward( TrafficLight*, ELightDirct ) const;
+        bool ableToForward( TrafficLight*, ELightDirct ) const;
 
         /** Check if be able to go forward and how much to go
          *  \do the actual forward 
          *  This operation was invoked in advance. at every step forward.
          */
-		void checkLightForward( ) ;
+        void checkLightForward( ) ;
 
         /* The car generated place */
-		EPlace genPlace;
+        EPlace genPlace;
 
         /* The car distination place */
-		EPlace dist;
+        EPlace dist;
 
         /* The car speed */
-		qreal speed;
+        qreal speed;
 };
 
 #endif // CAR_H
