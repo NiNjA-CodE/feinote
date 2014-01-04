@@ -2,11 +2,10 @@
 #define MISC_H
 
 #include "trafficLight.h"
-//  Simulation speed up
-//static const int speedUp = 1;
 
-//  How many frame per secend
-//static const int freq = 300;
+//  Global traffic lights
+static TrafficLight* pLightAtCr1 = new TrafficLight( 0 );
+static TrafficLight* pLightAtCr2 = new TrafficLight( 125 );
 
 //  Six road points
 enum EPlace {
@@ -18,6 +17,17 @@ enum EPlace {
 	eRHE       //  Erhuan East
 };
 	
+//  Color tags of cars from different road point.
+static const QColor pointColor[6] = {
+	Qt::blue,			//  pointColor[eBSN]
+	Qt::darkGreen,		//  pointColor[eBSS]
+	Qt::cyan,           //  pointColor[eTBN]
+	Qt::darkRed,        //  pointColor[eTBS]
+	Qt::black,          //  pointColor[eRHW]
+	Qt::magenta         //  pointColor[eRHE]
+};
+
+//  StartPoint coordinates in QGraphicsView.
 static const QPointF startPoint[6] = {
 	QPointF(-337.5, -150),		//  startPoint[eBSN]
 	QPointF(-312.5, 150),		//  startPoint[eBSS]
@@ -27,6 +37,7 @@ static const QPointF startPoint[6] = {
 	QPointF(500, -87.5)		//  startPoint[eRHE]
 };
 
+//  EndPoint coordinates in QGraphicsView.
 static const QPointF endPoint[6] = {
 	QPointF(-312.5, -180),		//  endPoint[eBSN]
 	QPointF(-337.5, 180),		//  endPoint[eBSS]
@@ -51,7 +62,7 @@ static const QPointF lightCr2TBS = QPointF(337.5, -50);
 static const QPointF lightCr2RHW = QPointF(300, -62.5);
 static const QPointF lightCr2RHE = QPointF(350, -87.5);
 
-//  Turnning points 
+//  Turnning points' coordinates.
 static const QPointF BSN2RHW = QPointF(-337.5, -87.5);
 static const QPointF RHE2BSN = QPointF(-312.5, -87.5);
 static const QPointF RHW2BSS = QPointF(-337.5, -62.5);
@@ -67,34 +78,4 @@ static const QPointF RHE2TBN = QPointF(337.5, -87.5);
 static const QPointF RHW2TBS = QPointF(312.5, -62.5);
 static const QPointF TBS2RHE = QPointF(337.5, -62.5);
 
-//  Color tags of cars from different road point
-static const QColor pointColor[6] = {
-	Qt::blue,			//  pointColor[eBSN]
-	Qt::darkGreen,		//  pointColor[eBSS]
-	Qt::cyan,           //  pointColor[eTBN]
-	Qt::darkRed,        //  pointColor[eTBS]
-	Qt::black,          //  pointColor[eRHW]
-	Qt::magenta         //  pointColor[eRHE]
-};
-
-//  Traffic light color
-//static const QColor trafficLightRed = Qt::red;
-//static const QColor trafficLightGreen = Qt::green;
-
-//  Global traffic lights
-//volatile static TrafficLight pLightAtCr1( 0 );
-//volatile static TrafficLight pLightAtCr2( 125 );
-static TrafficLight* pLightAtCr1 = new TrafficLight( 0 );
-//static TrafficLight* pLightAtCr1 = &lightAtCr1;
-//static TrafficLight* pLightAtCr2 = &lightAtCr2;
-static TrafficLight* pLightAtCr2 = new TrafficLight( 125 );
-
-/*
-volatile bool ableCr1NS = false;
-volatile bool ableCr1WE = false;
-volatile bool ableCr2NS = false;
-volatile bool ableCr2WE = false;
-*/
-
-//static int flag;
 #endif //  MISC_H

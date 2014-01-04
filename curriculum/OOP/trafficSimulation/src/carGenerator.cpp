@@ -14,20 +14,11 @@ CarGenerator::CarGenerator()
 //	ticker = 59;
 }
 
-/*
-CarGenerator::CarGenerator( EPlace place, qreal x, qreal y, QColor color) : 
-	genPlace(place), genPoint(QPointF(x,y)), genColor(color), ticker(59)
-{
-
-}
-*/
-
 CarGenerator::CarGenerator( EPlace place, int heavy ) : 
 	genPlace( place ), trafHeavy( heavy ) 
 {
 	ticker = 600/trafHeavy;
 	placeSet();
-
 }
 
 /*---------------------------------------------------------------------------*/
@@ -62,7 +53,6 @@ void CarGenerator::paint( QPainter* painter, const QStyleOptionGraphicsItem*, QW
 QPainterPath CarGenerator::shape() const
 {
 	QPainterPath path;
-	//path.addRect( -12.5, -12.5, 25, 25 );
 	path.addRect( 0, 0, 0, 0 );
 	return path;
 }
@@ -106,14 +96,7 @@ void CarGenerator::advance( int step )
 		++ticker;
 	}
 
-	//  Detecting and clean cars that reach destination
-	//QList<QGraphicsItem*> garbage = scene()->collidingItems(this);
-	//QGraphicsItem* garbage = scene()->itemAt( mapToParent(0, -30));
 	QList<QGraphicsItem*> items = scene()->items();
-			//scene()->removeItem( garbage );
-	//if (garbage != 0 ) {
-		 //free(garbage);
-	//}
 
 	foreach (QGraphicsItem* item, items ) 
 	{

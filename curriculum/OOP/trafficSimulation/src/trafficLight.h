@@ -2,22 +2,29 @@
 #define TRAFFICLIGHT_H
 
 #include <QGraphicsItem>
+
+//  Simulation speedup 
 static const qreal speedUp = 15;
+//  How many frames per sec.
 static const int freq = 300;
-//volatile static int flag;
 
-enum ELightDirct {
-	eNS = 0,
-	eWE
-};
-
+//  Define constants of 2 trafficlight colors.
 static const QColor trafficLightRed = Qt::red;
 static const QColor trafficLightGreen = Qt::green;
 
+//  Enum of Direction of Trafficlight
+enum ELightDirct 
+{
+	eNS = 0,    //  North-South Direction
+	eWE         //  West-East Direction
+};
+
+/******************************************************************************
+ *                              Class TrafficLight                            *
+ *****************************************************************************/
 class TrafficLight : public QGraphicsItem
 {
 	public:
-		//TrafficLight();
 		//  param sec is real world second
 		TrafficLight( int sec );
 		QColor getLightStatus( ELightDirct ) volatile;
@@ -34,16 +41,7 @@ class TrafficLight : public QGraphicsItem
 
 	private:
 		volatile int ticker;
-
-	//public:
-		//volatile bool ableNS;
-		//QColor colorNS;
-		//QColor colorWE;
-
 };
-
-//TrafficLight* pLightAtCr1 = new TrafficLight( 135 );
-//TrafficLight* pLightAtCr2 = new TrafficLight( 0 );
 
 #endif  //  TRAFFICLIGHT_H
 

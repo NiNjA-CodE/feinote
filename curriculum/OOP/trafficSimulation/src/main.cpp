@@ -1,11 +1,9 @@
 #include <QtGui>
 #include <math.h>
-#include "car.h"
 
+#include "car.h"
 #include "carFrom.h"
 #include "carGenerator.h"
-#include "trafficLight.h"
-//#include "userDefines.h"
 
 int main (int argc, char * argv[])
 {
@@ -112,9 +110,7 @@ int main (int argc, char * argv[])
 	QGraphicsView view( &scene );
 	view.setViewportUpdateMode( QGraphicsView::BoundingRectViewportUpdate );
 	view.setWindowTitle( QT_TRANSLATE_NOOP(QGraphicsVIew, "Traffic simulation") );
-
 	view.show();
-
 
 	//  Set Timer
 	QTimer timer;

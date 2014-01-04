@@ -36,6 +36,7 @@ CarBSS::CarBSS( qreal spd ) : Car( eBSS, eBSS, spd )
 CarBSS::~CarBSS()
 {
 }
+
 /*----- CarTBN --------------------------------------------------------------*/
 CarTBN::CarTBN( qreal spd ) : Car( eTBN, eTBN, spd )
 {
@@ -48,6 +49,7 @@ CarTBN::CarTBN( qreal spd ) : Car( eTBN, eTBN, spd )
 CarTBN::~CarTBN()
 {
 }
+
 /*----- CarTBS --------------------------------------------------------------*/
 CarTBS::CarTBS( qreal spd ) : Car( eTBS, eTBS, spd )
 {
@@ -61,6 +63,7 @@ CarTBS::CarTBS( qreal spd ) : Car( eTBS, eTBS, spd )
 CarTBS::~CarTBS()
 {
 }
+
 /*----- CarRHW --------------------------------------------------------------*/
 CarRHW::CarRHW( qreal spd ) : Car( eRHW, eRHW, spd )
 {
@@ -74,6 +77,7 @@ CarRHW::CarRHW( qreal spd ) : Car( eRHW, eRHW, spd )
 CarRHW::~CarRHW()
 {
 }
+
 /*----- CarRHE --------------------------------------------------------------*/
 CarRHE::CarRHE( qreal spd ) : Car( eRHE, eRHE, spd )
 {
@@ -86,8 +90,9 @@ CarRHE::CarRHE( qreal spd ) : Car( eRHE, eRHE, spd )
 CarRHE::~CarRHE()
 {
 }
+
 /*===========================================================================*/
-/*                                turnDirection                                    */
+/*                                turnDirection                              */
 /*===========================================================================*/
 
 /*----- CarBSN --------------------------------------------------------------*/
@@ -296,6 +301,7 @@ void CarRHW::turnDirection()
 	//  else go to the adverse direction 
 
 }
+
 /*----- CarRHE --------------------------------------------------------------*/
 void CarRHE::turnDirection()
 {
