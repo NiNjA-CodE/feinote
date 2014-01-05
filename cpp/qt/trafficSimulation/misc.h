@@ -84,10 +84,10 @@ static const QColor pointColor[6] = {
 //  Global traffic lights
 //volatile static TrafficLight pLightAtCr1( 0 );
 //volatile static TrafficLight pLightAtCr2( 125 );
-static TrafficLight* pLightAtCr1 = new TrafficLight( 0 );
+static TrafficLight* pLightAtCr1 = new TrafficLight( 120 );
 //static TrafficLight* pLightAtCr1 = &lightAtCr1;
 //static TrafficLight* pLightAtCr2 = &lightAtCr2;
-static TrafficLight* pLightAtCr2 = new TrafficLight( 120 );
+static TrafficLight* pLightAtCr2 = new TrafficLight( 0 );
 
 /*
 volatile bool ableCr1NS = false;

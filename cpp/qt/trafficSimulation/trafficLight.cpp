@@ -12,7 +12,7 @@
 /*---------------------------------------------------------------------------*/
 TrafficLight::TrafficLight( int tik ) : ticker( tik * freq / speedUp ) 
 {
-	//if ( ticker >= 0 && ticker <= 120 * freq - 1 ) {
+	//if ( ticker >= 0 && ticker <= redTime * freq - 1 ) {
 		/*
 		colorNS = trafficLightRed;
 		colorWE = trafficLightGreen;
@@ -77,7 +77,7 @@ QColor TrafficLight::getLightStatus( ELightDirct dirc ) volatile
 {
 	if ( dirc == eNS ) 
 	{
-		if ( ticker >= 0 && ticker <= 120 * freq /speedUp - 1 ) {
+		if ( ticker >= 0 && ticker <= redTime * freq /speedUp - 1 ) {
 			return trafficLightRed;
 		}
 		else {
@@ -85,7 +85,7 @@ QColor TrafficLight::getLightStatus( ELightDirct dirc ) volatile
 		}
 	}
 	else {
-		if ( ticker >= 0 && ticker <= 120 * freq / speedUp - 1 )
+		if ( ticker >= 0 && ticker <= redTime * freq / speedUp - 1 )
 			return trafficLightGreen;
 		else 
 			return trafficLightRed;
@@ -119,7 +119,7 @@ void TrafficLight::advance( int step )
 		//flag = 0;
 	}
 	/*
-	else if ( ticker == 120 * freq -1 )
+	else if ( ticker == redTime * freq -1 )
 	{
 		++ticker;
 		//ableNS = true;

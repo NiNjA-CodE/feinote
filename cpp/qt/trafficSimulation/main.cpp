@@ -100,10 +100,10 @@ int main (int argc, char * argv[])
 	pcargen = new CarGenerator( eTBS, 1 );
 	scene.addItem( pcargen );
 	//  Generator at RHW
-	pcargen = new CarGenerator( eRHW, 3 );
+	pcargen = new CarGenerator( eRHW, 2 );
 	scene.addItem( pcargen );
 	//  Generator at RHE
-	pcargen = new CarGenerator( eRHE, 3 );
+	pcargen = new CarGenerator( eRHE, 2 );
 	scene.addItem( pcargen );
 	//car->setStartPos();
 

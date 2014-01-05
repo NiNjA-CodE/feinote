@@ -4,6 +4,7 @@
 #include <QGraphicsItem>
 static const qreal speedUp = 1;
 static const int freq = 50;
+static const int redTime = 50;
 //volatile static int flag;
 
 enum ELightDirct {
