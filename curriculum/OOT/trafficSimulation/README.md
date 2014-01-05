@@ -91,7 +91,6 @@ TrafficSimulation
 
 ###仿真画面
 ![snapshot](https://raw.github.com/Universefei/feinote/master/curriculum/OOT/trafficSimulation/figures/snapshoot1.png)
-![snapshot](https://raw.github.com/Universefei/feinote/master/curriculum/OOT/trafficSimulation/figures/snapshot2.png)
 
 ##源程序清单
 
@@ -123,6 +122,10 @@ TrafficSimulation
 
 ##运行情况总结报告
 
+![snapshot](https://raw.github.com/Universefei/feinote/master/curriculum/OOT/trafficSimulation/figures/snapshoot1.png)
+![snapshot](https://raw.github.com/Universefei/feinote/master/curriculum/OOT/trafficSimulation/figures/snapshot2.png)
+
+运行结果如上，红绿灯实时改变，当碰到红灯的时候车辆停止。运行程序后可看到看到车辆运行路线符合要求！
 
 
 
