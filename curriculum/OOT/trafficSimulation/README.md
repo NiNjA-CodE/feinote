@@ -90,25 +90,20 @@ TrafficSimulation
 * `./trafficSimulation`命令即可运行
 
 ###仿真画面
-
+![snapshot](https://raw.github.com/Universefei/feinote/master/curriculum/OOT/trafficSimulation/figures/snapshoot1.png)
 
 ##源程序清单
 
 ```
 .
 ├── AUTHORS
-├── doc
+├── doc/
 │   ├── 13prj.pdf
 │   ├── Class Diagram0.asta
 │   └── Class Diagram0.asta.bak
-├── figures
-│   ├── Class diagram.png
-│   ├── prob1.png
-│   ├── prob2.png
-│   ├── prob3.png
-│   └── Sequence Diagram.png
+├── figures/
 ├── README.md
-├── src (源码文件夹)
+├── src/ (源码文件夹)
 │   ├── car.cpp
 │   ├── carFrom.cpp
 │   ├── carFrom.h
@@ -132,6 +127,7 @@ TrafficSimulation
 
 ##意见和建议
 
+大作太难了，特别是没有做过界面的，刚开始无从下手，花了好长时间才做出来。
+希望以后作业可以不要求搞界面的，对于没有UI编程经验的人来说，第一次难度好大。
+或者老师可以给一下UI方面编程的具体意见。
 
-
-3 directories, 25 files
