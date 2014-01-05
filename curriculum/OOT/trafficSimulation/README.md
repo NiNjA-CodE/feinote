@@ -91,7 +91,7 @@ TrafficSimulation
 
 ###仿真画面
 ![snapshot](https://raw.github.com/Universefei/feinote/master/curriculum/OOT/trafficSimulation/figures/snapshoot1.png)
-![snapshot](https://raw.github.com/Universefei/feinote/master/curriculum/OOT/trafficSimulation/figures/snapshoot2.png)
+![snapshot](https://raw.github.com/Universefei/feinote/master/curriculum/OOT/trafficSimulation/figures/snapshot2.png)
 
 ##源程序清单
 
