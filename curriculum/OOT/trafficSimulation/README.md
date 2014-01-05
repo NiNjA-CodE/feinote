@@ -12,6 +12,12 @@ TrafficSimulation
 
 ###设计类图和序列图
 
+**Class Diagram**
+![class diagram](https://raw.github.com/Universefei/feinote/master/curriculum/OOT/trafficSimulation/figures/Class%20diagram.png)
+
+**Sequence Diagram**
+![sequence diagram](https://raw.github.com/Universefei/feinote/master/curriculum/OOT/trafficSimulation/figures/Sequence%20Diagram.png)
+
 
 ###类说明
 
