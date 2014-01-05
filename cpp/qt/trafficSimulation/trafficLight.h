@@ -2,8 +2,8 @@
 #define TRAFFICLIGHT_H
 
 #include <QGraphicsItem>
-static const qreal speedUp = 15;
-static const int freq = 300;
+static const qreal speedUp = 1;
+static const int freq = 50;
 //volatile static int flag;
 
 enum ELightDirct {

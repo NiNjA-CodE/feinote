@@ -119,7 +119,7 @@ void CarGenerator::advance( int step )
 	{
 		if ( item->mapToParent( 0, 0 ) == endPoint[genPlace] ) {
 			if ( item != this ) {
-				//item->setPos( 0, 0 );
+				item->setPos( 1000, 1000 );
 				//scene()->removeItem( ( Car *)item );
 				//delete item;
 			}

@@ -80,12 +80,58 @@ TrafficSimulation
 * `BBB2AAA` :从BBB方向到AAA方向的车应该转弯的点
 
 
+###仿真流程
+
+* linux环境下安装Qt sdk
+* 打开terminal, cd到应用程序目录
+* `qmake -project`
+* `qmake trafficSimulation.pro`为项目生成Makefile文件
+* `make`编译
+* `./trafficSimulation`命令即可运行
+
+###仿真画面
+
+
 ##源程序清单
 
+```
+.
+├── AUTHORS
+├── doc
+│   ├── 13prj.pdf
+│   ├── Class Diagram0.asta
+│   └── Class Diagram0.asta.bak
+├── figures
+│   ├── Class diagram.png
+│   ├── prob1.png
+│   ├── prob2.png
+│   ├── prob3.png
+│   └── Sequence Diagram.png
+├── README.md
+├── src (源码文件夹)
+│   ├── car.cpp
+│   ├── carFrom.cpp
+│   ├── carFrom.h
+│   ├── carGenerator.cpp
+│   ├── carGenerator.h
+│   ├── car.h
+│   ├── main.cpp
+│   ├── Makefile
+│   ├── misc.h
+│   ├── trafficLight.cpp
+│   ├── trafficLight.h
+│   ├── trafficSimulation
+│   └── trafficSimulation.pro
+└── TODO
+```
 
 ##运行情况总结报告
+
+
 
 
 ##意见和建议
 
 
+
+3 directories, 25 files
