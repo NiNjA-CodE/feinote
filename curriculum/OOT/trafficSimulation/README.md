@@ -125,7 +125,9 @@ TrafficSimulation
 ![snapshot](https://raw.github.com/Universefei/feinote/master/curriculum/OOT/trafficSimulation/figures/snapshoot1.png)
 ![snapshot](https://raw.github.com/Universefei/feinote/master/curriculum/OOT/trafficSimulation/figures/snapshot2.png)
 
-运行结果如上，红绿灯实时改变，当碰到红灯的时候车辆停止。运行程序后可看到看到车辆运行路线符合要求！
+注：车身的颜色代表了车的产生地点，车头的颜色表明了车的目的地。
+运行结果如上，红绿灯实时改变，当碰到红灯的时候车辆停止。
+运行程序后可看到看到车辆运行路线符合要求！
 
 
 
